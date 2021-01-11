@@ -1,0 +1,53 @@
+.DS_Store
+
+application/cache/*
+!application/cache/index.html
+
+application/logs/*
+!application/logs/index.html
+
+!application/*/.htaccess
+
+composer.lock
+
+user_guide_src/build/*
+user_guide_src/cilexer/build/*
+user_guide_src/cilexer/dist/*
+user_guide_src/cilexer/pycilexer.egg-info/*
+/vendor/
+#/backup
+templates/logistics/
+templates/pt-cmp/
+templates/quiz/
+/uploads/*.jpg
+/uploads/*.gif
+/uploads/*.png
+captcha/*.jpg
+/.vscode/
+/application/config/database.php
+/application/config/config.php
+/application/config/websettings.php
+# /asset/foto_*/*.jpg
+# /asset/foto_*/*/*.jpg
+# /asset/foto_*/*.jpeg
+# /asset/foto_*/*/*.jpeg
+# /asset/foto_*/*.png
+# /asset/foto_*/*/*.png
+# /asset/settings/*
+/*.pdf
+/*.zip
+/*.zip
+*.zip
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+/tests/tests/
+/tests/results/

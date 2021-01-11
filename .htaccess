@@ -1,0 +1,31 @@
+RewriteEngine On
+
+#RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+#RewriteCond %{HTTP_HOST} ^sewagensetsilent.com [NC]
+#RewriteRule ^(.*)$ https://www.sewagensetsilent.com/$1 [L,R=301]
+
+#RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ https://www.sewagensetsilent.com/$1 [L,R=301] 
+
+#RewriteCond %{HTTP_HOST} (?!^www\.)^(.+)$ [OR]
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://www.%1%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/system.*
+RewriteCond %{REQUEST_URI} ^application.*
+RewriteRule ^(.*)$ index.php?/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?/$1 [L]
+#RewriteRule ^adm0204 /pemetaan.co.id/administrator [QSA,L]
+#RewriteRule /pemetaan.co.id/ /pemetaan.co.id/administrator [L,R=301]
+
+#RewriteEngine on
+#RewriteCond %{REQUEST_URI} !maintenance.html
+#RewriteCond %{REQUEST_FILENAME} !(styles|images).+$
+#RewriteCond %{REMOTE_ADDR} !^144\.4\.78\.177$
+#RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+#RewriteRule (.*) /maintenance.html [R,L]
+#Redirect /pemetaan.co.id/administrator/ /pemetaan.co.id/

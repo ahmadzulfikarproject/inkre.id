@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/multija2/public_html
+    - /bin/cp -r * $DEPLOYPATH
