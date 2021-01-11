@@ -1,0 +1,218 @@
+.modal-body{
+	width: 100% !important;
+
+}
+.modal-body iframe{
+	width: 100% !important;
+}
+.input-group .btn{
+	display: table-cell;
+}
+.input-group .btn:last-child:not(:first-child){
+	border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+
+}
+.nopadding{
+	padding: 0px 0px !important;
+	border: none !important;
+}
+.datalist td img{
+	max-width: 100px !important;
+    max-height: 100px;
+}
+.thumbnail{
+	max-width: 200px !important;
+	height: auto !important;
+
+}
+.thumbnail img{
+    height: auto !important;
+}
+
+.material-switch > input[type="checkbox"] {
+    display: none;   
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative; 
+    width: 40px;  
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+
+.fileinput .thumbnail > img{
+    max-height: 150px !important;
+}
+body.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2c539e+0,2c539e+100;Blue+3D+%232 */
+background: rgb(44,83,158); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
+
+}
+.skin-blue .main-sidebar{
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=50, Direction=94, Color=#000000)";/*IE 8*/
+-moz-box-shadow: 1px 15px 50px -8px rgba(0,0,0,0.8);/*FF 3.5+*/
+-webkit-box-shadow: 1px 15px 50px -8px rgba(0,0,0,0.8);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+box-shadow: 1px 15px 50px -8px rgba(0,0,0,0.8);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=50, Direction=135, Color=#000000); /*IE 5.5-7*/
+}
+
+body.skin-blue .main-header .logo{
+background-color: #002784;
+}
+body.skin-blue .main-header .navbar{
+    background-color: #2C539E;
+}
+body.skin-blue .sidebar-menu>li{
+    border-bottom: solid 1px #2c74b1;
+    position: relative;
+
+}
+
+body.skin-blue .sidebar-menu>li:last-child{
+    border-bottom: none !important;
+
+}
+body.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a,body.skin-blue .sidebar-menu>li.header{
+    background-color: #002784;
+}
+.skin-blue .sidebar-menu>li.active .icon{
+position: absolute;
+right: -3px;
+top: 0;
+color: #ecf0f5;
+    z-index: 9;
+    font-size: 45px;
+    line-height: 45px;
+}
+.sidebar-menu li>a>.fa-angle-left{
+    margin-right: 40px !important;
+}
+body.skin-blue .sidebar-menu>li>.treeview-menu{
+    background-color: #015398;
+}
+body .navbar-custom-menu{
+
+}
+
+body.skin-blue .btn-primary {
+    -moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+    box-shadow:inset 0px 1px 0px 0px #cae3fc;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
+    background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
+    background-color:#79bbff;
+    -webkit-border-top-left-radius:0px;
+    -moz-border-radius-topleft:0px;
+    border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    border-bottom-right-radius:0px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
+    text-indent:0;
+    border:1px solid #469df5;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-weight:bold;
+    font-style:normal;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #287ace;
+}
+body.skin-blue .btn-primary:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+    background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
+    background-color:#4197ee;
+}
+body.skin-blue .btn-primary:active {
+    position:relative;
+    top:1px;
+}
+/* Allinworld99.blogspot.com */
+
+body table th {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+    background-color:#ededed;
+    -webkit-border-top-left-radius:0px;
+    -moz-border-radius-topleft:0px;
+    border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    border-bottom-right-radius:0px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
+    text-indent:0;
+    border:1px solid #dcdcdc;
+    color:#777777;
+    font-family:arial;
+    font-weight:bold;
+    font-style:normal;
+    text-decoration:none;
+    text-align:center;
+    text-transform: capitalize;
+}
+body table th:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+    background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background-color:#dfdfdf;
+}body table th:active {
+    position:relative;
+    top:1px;
+}
+/* Allinworld99.blogspot.com */

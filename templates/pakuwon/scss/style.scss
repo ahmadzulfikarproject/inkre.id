@@ -1,0 +1,35 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+/* Base */
+@import "site-base";
+/* Navbar */
+@import "site-navbar";
+/* Blocks */
+@import "site-blocks";
+/* Animasi */
+@import "animasi";
+$nama: fwd-;
+.#{$nama}table{
+	background: $primary;
+	padding: 50px 0px;
+	& table thead{
+		color: $gray-400;
+		background: $gray-700;
+	}
+	& table{
+		color: $gray-800;
+		background: $gray-100;
+		//-ms-filter: $box-shadow-lg;/*IE 8*/
+		//-moz-box-shadow: $box-shadow-lg;/*FF 3.5+*/
+		//-webkit-box-shadow: $box-shadow-lg;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+		//box-shadow: $box-shadow-lg;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+		//filter: $box-shadow-lg; /*IE 5.5-7*/
+		@include box-shadow($box-shadow-sm);
+	}
+}
+.hidden{
+	display: none !important;
+}
+/*fikar Web Design*/

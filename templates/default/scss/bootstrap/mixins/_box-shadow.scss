@@ -1,0 +1,8 @@
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    //box-shadow: $shadow;
+    -moz-box-shadow: $shadow;/*FF 3.5+*/
+	-webkit-box-shadow: $shadow;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+	box-shadow: $shadow;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+  }
+}

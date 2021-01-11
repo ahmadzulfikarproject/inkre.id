@@ -1,0 +1,1 @@
+<span class="label label-success pull-right"><?php echo $this->model_hubungi->pesan_masuk()->num_rows(); ?></span>

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /administrator/
+Disallow: /application/
+Disallow: /captcha/
+Disallow: /system/
+Disallow: /templates/
+
+Sitemap: http://rentalgensetjakarta.net/berita/sitemap.xml
+Sitemap: http://rentalgensetjakarta.net/services/sitemap.xml
+Sitemap: http://rentalgensetjakarta.net/projects/sitemap.xml
+Sitemap: http://rentalgensetjakarta.net/feed

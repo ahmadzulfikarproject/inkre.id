@@ -1,0 +1,136 @@
+.caroufredsel_wrapper,.caroufredsel_wrapper ul{
+	height: auto !important;
+
+}
+.caroufredsel_wrapper ul{
+	position: relative !important;
+}
+.list_carousel {
+	/*background-color: #fff;*/
+	margin: 0 0 0px 0px;
+	width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.list_carousel ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: block;
+}
+#clients li {
+	font-size: 40px;
+	color: #999;
+	text-align: center;
+	width: auto;
+	height: 70px;
+	padding: 0;
+	margin: 6px;
+	display: block;
+	float: left;
+}
+#clients img{
+	max-height: 70px;
+	width: auto;
+}
+.list_carousel.responsive {
+	width: auto;
+	margin-left: 0;
+}
+#projectslist li,#serviceslist li,#beritalist li,#productslist li,#productsrelated li,#relatedlist li,#sertifikatlistz li{
+	clear: none;
+	float: left;
+	padding: 5px;
+}
+#projectslist .carousel-caption-header a{
+	color: #fafafa;
+
+}
+
+#projectslist .responsive-container{
+	-moz-transition: all 0.15s linear !important;
+   -webkit-transition: all 0.15s linear !important;
+   -o-transition: all 0.15s linear !important;
+   transition: all 0.15s linear !important;
+   border: solid 10px #dddddd;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=27, Direction=0, Color=#000000)";/*IE 8*/
+-moz-box-shadow: 0 0 27px -2px rgba(0,0,0,0.7);/*FF 3.5+*/
+-webkit-box-shadow: 0 0 27px -2px rgba(0,0,0,0.7);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+box-shadow: 0 0 27px -2px rgba(0,0,0,0.7);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=27, Direction=135, Color=#000000); /*IE 5.5-7*/
+}
+#projectslist .responsive-container:hover{
+	    border: solid 10px #ffffff;
+}
+#contohslide li{
+	/*clear: none;*/
+	display: inline-block;
+}
+.cf-control{
+	background-color: #454545;
+	position: absolute;
+	z-index: 99;
+	top: 50%;
+	margin-top: -25px;
+	color: #ffffff !important;
+	-webkit-transform: scale(0);
+    transform: scale(0);
+        -webkit-transition:linear 100ms;
+  -moz-transition:linear 100ms;
+  -o-transition:linear 100ms;
+  transition:linear 100ms;
+  overflow: visible;
+}
+.left.cf-control{
+  
+  left: -30px !important;
+  
+
+}
+.right.cf-control{
+  
+  right: -30px !important;
+  
+
+}
+.cf-control .glyphicon-chevron-left, .cf-control .glyphicon-chevron-right, .cf-control .icon-prev, .cf-control .icon-next{
+  background: #B70100;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+  font-size: 30px;
+}
+.cf-control i{
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=50, Direction=0, Color=#000000)";/*IE 8*/
+-moz-box-shadow: 0 16px 50px -21px rgba(0,0,0,0.8);/*FF 3.5+*/
+-webkit-box-shadow: 0 16px 50px -21px rgba(0,0,0,0.8);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+box-shadow: 0 16px 50px -21px rgba(0,0,0,0.8);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=50, Direction=135, Color=#000000); /*IE 5.5-7*/
+}
+.cf:hover .left.cf-control{
+  left: 40px !important;
+          -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index: 4;
+}
+.cf:hover .right.cf-control{
+  right: 40px !important;
+          -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index: 4;
+}
+#sertifikatlist li{
+	height: 70px;
+	float: left;
+	padding: 5px 15px;
+}
+#sertifikatlist li img{
+	max-height: 60px;
+}
