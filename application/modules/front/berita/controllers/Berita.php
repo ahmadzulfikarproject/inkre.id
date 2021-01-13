@@ -282,7 +282,7 @@ class Berita extends MY_Controller
 		// set your feed's title, description, link, pubdate and language
 		$posts = $data['berita']->result();
 		$feed->title = setting('site_name');
-		$feed->description = idwebsite('meta_deskripsi');
+		$feed->description = setting('site_description');
 		$feed->link = base_url('berita/feed');
 		$feed->lang = 'id';
 		$feed->pubdate = (!empty($posts)) ? $posts[0]->tanggal : date('Y-m-d H:i:s');

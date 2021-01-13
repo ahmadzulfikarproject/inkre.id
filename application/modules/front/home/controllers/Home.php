@@ -18,7 +18,7 @@ class Home extends MY_Controller
         $this->load->model('model_utama_projects');
         $this->load->model('model_utama_services');
         $data['title'] = setting('site_name');
-        $data['description'] = setting('site_description'); //idwebsite('meta_deskripsi');
+        $data['description'] = setting('site_description'); //setting('site_description');
         $data['keywords'] = setting('meta_keyword'); //idwebsite('meta_keyword');
         $data['ogimage'] = home_url() . 'asset/settings/' . setting('site_header');
         $this->fcore->set_meta($data, 'home');
@@ -69,7 +69,7 @@ class Home extends MY_Controller
 		$feed = new Feed();
 		
 		$feed->title = setting('site_name');
-		$feed->description = idwebsite('meta_deskripsi');
+		$feed->description = setting('site_description');
 		$feed->link = base_url();
 		$feed->lang = 'id';
 		$feed->pubdate = date('Y-m-d H:i:s');

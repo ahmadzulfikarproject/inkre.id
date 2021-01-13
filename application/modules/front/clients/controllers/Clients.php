@@ -367,7 +367,7 @@
 				$data['encoding'] = 'utf-8';
 				$data['feed_url'] = base_url('clients/feed');
 				$data['url'] = base_url('clients');
-				$data['page_description'] = idwebsite('meta_deskripsi');
+				$data['page_description'] = setting('site_description');
 				$data['page_language'] = 'en-en';
 				$data['creator_email'] = $email['0'];
 				$data['tags'] = $this->model_utama_clients->feed_clients_tags('clients');
@@ -376,7 +376,7 @@
 				//print_r($data['posts']);
 
 				foreach ($data['hasil'] as &$tag) {
-					$tag['content'] = $tag['tags_description'] . ' ' . idwebsite('meta_deskripsi');
+					$tag['content'] = $tag['tags_description'] . ' ' . setting('site_description');
 					$tag['judul'] = $tag['tags_title'] . ' di Jakarta Bogor Depok Tangerang Bekasi' . ' | ' . setting('site_name');
 					$tag['created_time'] = $tag['updated_at'];
 
@@ -443,54 +443,34 @@
 		}
 		public function feed()
 		{
-			//$this->load->helper('xml');
-			//$this->load->helper('text');
-
-			cek_session_front();
-			$data['title'] = 'Semua clients';
-			$jumlah = $this->model_utama_clients->hitungclients()->num_rows();
-			$config['base_url'] = base_url() . 'clients/index';
-			$config['total_rows'] = $jumlah;
-			$this->session->set_userdata('classmenu', 'clients');
+			// cek_session_front();
+			$this->load->library('feed');
+			// create new instance
+			$feed = new Feed();
+			$dari = 0;
 			$config['per_page'] = 20;
-			if ($this->uri->segment('3') != '') {
-				$dari = $this->uri->segment('3');
-			} else {
-				$dari = 0;
-			}
-
 			if (is_numeric($dari)) {
 				$data['clients'] = $this->model_utama_clients->clients($dari, $config['per_page']);
 			} else {
 				redirect('clients');
 			}
-			$this->pagination->initialize($config);
-			//$this->fcore->set_meta(array(), 'home');
-			//$this->template->load(template().'/template_rss',template().'/view_clients_rss',$data);
-			$email = explode(',', contactwebsite('email'));
-			$data['post_type'] = 'clients';
-			$data['feed_name'] = setting('site_name');
-			$data['encoding'] = 'utf-8';
-			$data['feed_url'] = base_url('clients/feed');
-			$data['url'] = base_url('clients');
-			$data['page_description'] = idwebsite('meta_deskripsi');
-			$data['page_language'] = 'en-en';
-			$data['creator_email'] = $email['0'];
-
-
-			$data['hasil'] = $data['clients']->result_array();
-			//print_r($data['posts']);
-
-			foreach ($data['hasil'] as &$tag) {
-				$tag['content'] = $tag['isi_clients'];
-				$tag['judul'] = $tag['judul'];
-				unset($tag['isi_clients']);
+			// set your feed's title, description, link, pubdate and language
+			$posts = $data['clients']->result();
+			$feed->title = setting('site_name');
+			$feed->description = setting('site_description');
+			$feed->link = base_url('clients/feed');
+			$feed->lang = 'id';
+			$feed->pubdate = (!empty($posts)) ? $posts[0]->created_time : date('Y-m-d H:i:s');
+			// add posts to the feed
+			if (!empty($posts)) {
+				foreach ($posts as $post) {
+					$post->slug = base_url('clients/detail/' . $post->slug);
+					// set item's title, author, url, pubdate and description
+					$feed->add($post->meta_title ? $post->meta_title : $post->judul, $post->first_name . ' ' . $post->last_name, $post->slug, $post->created_time, clear_html(strip_tags($post->isi_clients)));
+					// $feed->add($post->judul, $post->first_name . ' ' . $post->last_name, $post->slug, $post->created_time, '');
+				}
 			}
-			$data['posts'] = $data['hasil'];
-			//print_r($data['hasil']);
-			header("Content-Type: application/rss+xml");
-
-			//$this->load->view('rss', $data);
-			$this->template->load(template() . '/template_rss', template() . '/view_clients_rss', $data);
+			// show your feed (options: 'atom' (recommended) or 'rss')
+			$feed->render('atom');
 		}
 	}

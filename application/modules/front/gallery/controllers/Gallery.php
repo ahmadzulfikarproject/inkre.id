@@ -370,7 +370,7 @@ class Gallery extends MY_Controller {
 	        $data['encoding'] = 'utf-8';
 	        $data['feed_url'] = base_url('gallery/feed');
 	        $data['url'] = base_url('gallery');
-	        $data['page_description'] = idwebsite('meta_deskripsi');
+	        $data['page_description'] = setting('site_description');
 	        $data['page_language'] = 'en-en';
 	        $data['creator_email'] = $email['0'];
 	        $data['tags'] = $this->model_utama_gallery->feed_gallery_tags('gallery');
@@ -379,7 +379,7 @@ class Gallery extends MY_Controller {
 	        //print_r($data['posts']);
 	  
 	        foreach($data['hasil'] as &$tag){
-			    $tag['content'] = $tag['tags_description']. ' '.idwebsite('meta_deskripsi');
+			    $tag['content'] = $tag['tags_description']. ' '.setting('site_description');
 			    $tag['judul'] = $tag['tags_title'].' di Jakarta Bogor Depok Tangerang Bekasi'.' | '.setting('site_name');
 			    $tag['created_time'] = $tag['updated_at'];
 			    
@@ -461,7 +461,7 @@ class Gallery extends MY_Controller {
         $data['encoding'] = 'utf-8';
         $data['feed_url'] = base_url('gallery/feed');
         $data['url'] = base_url('gallery');
-        $data['page_description'] = idwebsite('meta_deskripsi');
+        $data['page_description'] = setting('site_description');
         $data['page_language'] = 'en-en';
         $data['creator_email'] = $email['0'];
         

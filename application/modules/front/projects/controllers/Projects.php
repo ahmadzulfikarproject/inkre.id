@@ -359,7 +359,7 @@ class Projects extends MY_Controller
 			$data['encoding'] = 'utf-8';
 			$data['feed_url'] = base_url('projects/feed');
 			$data['url'] = base_url('projects');
-			$data['page_description'] = idwebsite('meta_deskripsi');
+			$data['page_description'] = setting('site_description');
 			$data['page_language'] = 'en-en';
 			$data['creator_email'] = $email['0'];
 			$data['tags'] = $this->model_utama_projects->feed_projects_tags('projects');
@@ -368,7 +368,7 @@ class Projects extends MY_Controller
 			//print_r($data['posts']);
 
 			foreach ($data['hasil'] as &$tag) {
-				$tag['content'] = $tag['tags_description'] . ' ' . idwebsite('meta_deskripsi');
+				$tag['content'] = $tag['tags_description'] . ' ' . setting('site_description');
 				$tag['judul'] = $tag['tags_title'] . ' di Jakarta Bogor Depok Tangerang Bekasi' . ' | ' . setting('site_name');
 				$tag['created_time'] = $tag['updated_at'];
 
@@ -452,7 +452,7 @@ class Projects extends MY_Controller
 		// set your feed's title, description, link, pubdate and language
 		$posts = $data['projects']->result();
 		$feed->title = setting('site_name');
-		$feed->description = idwebsite('meta_deskripsi');
+		$feed->description = setting('site_description');
 		$feed->link = base_url('projects/feed');
 		$feed->lang = 'id';
 		$feed->pubdate = (!empty($posts)) ? $posts[0]->created_time : date('Y-m-d H:i:s');

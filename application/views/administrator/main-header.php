@@ -15,9 +15,9 @@
         <!-- Logo -->
         <a href="<?php echo base_url('dashboard')?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><img alt="logo <?php echo idwebsite('nama_website'); ?>" class="sr-header" width='100%' src='<?php echo home_url().'/asset/'.logo(); ?>'></span>
+          <span class="logo-mini"><img alt="logo <?php echo setting('site_name'); ?>" class="sr-header" width='100%' src='<?php echo home_url().'/asset/'.logo(); ?>'></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><img alt="logo <?php echo idwebsite('nama_website'); ?>" class="sr-header" width='100%' src='<?php echo home_url().'asset/'.logo(); ?>'><b><?php //echo idwebsite('nama_website'); ?></b></span>
+          <span class="logo-lg"><img alt="logo <?php echo setting('site_name'); ?>" class="sr-header" width='100%' src='<?php echo home_url().'asset/'.logo(); ?>'><b><?php //echo setting('site_name'); ?></b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">

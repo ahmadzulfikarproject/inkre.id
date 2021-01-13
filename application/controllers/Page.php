@@ -70,8 +70,8 @@ class Page extends MY_Controller
 		}
 		// set your feed's title, description, link, pubdate and language
 		$posts = $data['page']->result();
-		$feed->title = idwebsite('nama_website');
-		$feed->description = idwebsite('meta_deskripsi');
+		$feed->title = setting('site_name');
+		$feed->description = setting('site_description');
 		$feed->link = base_url('page/feed');
 		$feed->lang = 'id';
 		$feed->pubdate = (!empty($posts)) ? $posts[0]->tgl_posting : date('Y-m-d H:i:s');
@@ -81,7 +81,7 @@ class Page extends MY_Controller
 			foreach ($posts as $post) {
 				$post->slug = base_url('page/detail/' . $post->slug);
 				// set item's title, author, url, pubdate and description
-				$feed->add($post->meta_title ? $post->meta_title : $post->judul, idwebsite('nama_website'), $post->slug, $post->tgl_posting, clear_html(strip_tags($post->isi_pages)));
+				$feed->add($post->meta_title ? $post->meta_title : $post->judul, setting('site_name'), $post->slug, $post->tgl_posting, clear_html(strip_tags($post->isi_pages)));
 				// $feed->add($post->judul, $post->first_name . ' ' . $post->last_name, $post->slug, $post->tgl_posting, '');
 			}
 		}

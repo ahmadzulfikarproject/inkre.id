@@ -325,7 +325,7 @@ class Sertifikat extends MY_Controller {
 	        $data['encoding'] = 'utf-8';
 	        $data['feed_url'] = base_url('sertifikat/feed');
 	        $data['url'] = base_url('sertifikat');
-	        $data['page_description'] = idwebsite('meta_deskripsi');
+	        $data['page_description'] = setting('site_description');
 	        $data['page_language'] = 'en-en';
 	        $data['creator_email'] = $email['0'];
 	        $data['tags'] = $this->model_utama_sertifikat->feed_sertifikat_tags('sertifikat');
@@ -334,7 +334,7 @@ class Sertifikat extends MY_Controller {
 	        //print_r($data['posts']);
 	  
 	        foreach($data['hasil'] as &$tag){
-			    $tag['content'] = $tag['tags_description']. ' '.idwebsite('meta_deskripsi');
+			    $tag['content'] = $tag['tags_description']. ' '.setting('site_description');
 			    $tag['judul'] = $tag['tags_title'].' di Jakarta Bogor Depok Tangerang Bekasi'.' | '.setting('site_name');
 			    $tag['tgl_posting'] = $tag['updated_at'];
 			    
@@ -416,7 +416,7 @@ class Sertifikat extends MY_Controller {
         $data['encoding'] = 'utf-8';
         $data['feed_url'] = base_url('sertifikat/feed');
         $data['url'] = base_url('sertifikat');
-        $data['page_description'] = idwebsite('meta_deskripsi');
+        $data['page_description'] = setting('site_description');
         $data['page_language'] = 'en-en';
         $data['creator_email'] = $email['0'];
         
