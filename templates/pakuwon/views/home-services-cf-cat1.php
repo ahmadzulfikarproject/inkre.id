@@ -9,19 +9,19 @@ $jumlah = $this->model_utama_services->semua_services_categories_array(0, 12, $i
 //foreach ($headline->result_array() as $row): 
 ?>
 <?php if ($jumlah > 1) : ?>
-  <section id="Services" class="ftco-sectionz ftco-properties">
-    <div class="container overlap-section">
+  <section id="Services" class="ftco-sectionz ftco-properties bg-primary pb-5 pt-5">
+    <div class="container overlap-sectionz">
       <div class="row">
         <div class="col-md-12">
-          <div class="bg-primary rounded p-4 text-white-50 shadow-lg">
+          <div class="bg-primaryz rounded p-4 text-white-50 shadow-lg">
             <div class="row align-items-center justify-content-center d-flex">
-              <div class="col-md-4 order-md-1 border-primary text-center ftco-animate">
+              <div class="col-md-12 order-md-1 border-primaryz text-center ftco-animate">
                 <div class="bg-primaryz text-white p-4" data-aos="fade-right" data-aos-delay="400">
                   <h2 class="mb-0"><strong>Our Services</strong></h2>
                   <p>Jasa dan pelayanan kami</p>
                 </div>
               </div>
-              <div class="col-md-8 order-md-2 ftco-animate" data-aos="fade-left" data-aos-delay="400">
+              <div class="col-md-12 order-md-2 ftco-animate" data-aos="fade-left" data-aos-delay="400">
                 <div class="services-slider-2 owl-carousel ftco-animate">
                   <?php foreach ($services as $ads => $row) : ?>
                     <?php
@@ -67,7 +67,7 @@ $jumlah = $this->model_utama_services->semua_services_categories_array(0, 12, $i
                             </div>
                           </div>
                         </div>
-                        <div class="box-shadow"></div>
+                        <!-- <div class="box-shadow"></div> -->
                       </div>
                     </div>
                   <?php endforeach; ?>

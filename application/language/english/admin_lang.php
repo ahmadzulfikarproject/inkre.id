@@ -17,6 +17,7 @@ $lang['site_url_label']						= "Site URL";
 $lang['site_favicon_label']					= "Favicon";
 $lang['site_logo_label']					= "Logo";
 $lang['site_header_label']					= "Image Header";
+$lang['site_bg1_label']						= "Background Image 1";
 $lang['site_background_label']				= "Background Image";
 $lang['site_icon_label']					= "Icon";
 $lang['settings_help_txt']					= "Settings allow you to change how your website performs certain actions and basic information like your site's name.";

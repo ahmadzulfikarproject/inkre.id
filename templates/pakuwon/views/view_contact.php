@@ -126,7 +126,7 @@
                       <h5 class="mt-0 mb-1">Mudah menjanggau segala lokasi</h5>
                       <?php if (!empty($record['alamat'])) : ?>
                         <?php echo  $record['alamat'] ?>
-                        <a href="#contactModal" role="button" class="btn btn-large btn-default" data-toggle="modal"><i class="fas fa-location-arrow"></i> Find Location</a>
+                        <!-- <a href="#contactModal" role="button" class="btn btn-large btn-default" data-toggle="modal"><i class="fas fa-location-arrow"></i> Find Location</a> -->
                       <?php endif; ?>
                     </div>
                   </li>
@@ -189,7 +189,7 @@
     </div>
   </div>
 </section>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.0824821815004!2d106.99069891531833!3d-6.119599561714676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a21c4e0eac15b%3A0x1e84c4bb34ec9e8e!2sPT.%20SOFYAN%20PERKASA%20MANDIRI!5e0!3m2!1sid!2sid!4v1609907130375!5m2!1sid!2sid" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.393549193167!2d106.9740925336749!3d-6.104184053259832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDYnMTUuMiJTIDEwNsKwNTgnNDMuMiJF!5e0!3m2!1sid!2sid!4v1622003350428!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 <div id="contactModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">

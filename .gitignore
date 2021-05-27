@@ -24,9 +24,9 @@ templates/quiz/
 /uploads/*.png
 captcha/*.jpg
 /.vscode/
-/application/config/database.php
-/application/config/config.php
-/application/config/websettings.php
+#/application/config/database.php
+#/application/config/config.php
+#/application/config/websettings.php
 # /asset/foto_*/*.jpg
 # /asset/foto_*/*/*.jpg
 # /asset/foto_*/*.jpeg

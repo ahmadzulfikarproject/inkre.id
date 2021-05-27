@@ -92,9 +92,9 @@ class Berita extends MY_Controller
 		}
 		$id_post = $dat->row_array();
 		$data['title'] = $row->judul;
-		$data['meta_title'] = $row->meta_title;
+		$data['meta_title'] = ($row->meta_title) ? $row->meta_title : $data['title'];
 		$string = character_limiter(strip_tags(html_entity_decode($row->isi_berita)), 300);
-		$data['description'] = $string;
+		$data['description'] = ($row->meta_description) ? $row->meta_description : $string;
 		$data['ogimage'] = base_url() . webconfig('asset') . '/foto_berita/' . $row->gambar;
 		$data['record'] = $this->model_utama->berita_detail($ids)->row_array();
 		$data['infoterkait'] = $this->model_utama->info_terkait(3, $row->tag, $ids);
@@ -151,6 +151,7 @@ class Berita extends MY_Controller
 		$this->template->meta->add('title', $this->template->title, 'og');
 		$this->template->meta->add('type', 'website', 'og');
 		$this->template->meta->add('locale', 'id_ID', 'og');
+		$this->template->meta->add('publisher', 'Sewa Genset 88');
 
 
 		// Publish the template

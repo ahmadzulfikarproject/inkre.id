@@ -17,7 +17,7 @@ class Home extends MY_Controller
         //fikar
         $this->load->model('model_utama_projects');
         $this->load->model('model_utama_services');
-        $data['title'] = setting('site_name');
+        $data['title'] = setting('meta_title') ? setting('meta_title') : setting('site_name');
         $data['description'] = setting('site_description'); //setting('site_description');
         $data['keywords'] = setting('meta_keyword'); //idwebsite('meta_keyword');
         $data['ogimage'] = home_url() . 'asset/settings/' . setting('site_header');
@@ -51,6 +51,7 @@ class Home extends MY_Controller
 		$this->template->meta->add('spiders', 'all');
 		$this->template->meta->add('image', $data['ogimage'],'og');
 		$this->template->meta->add('site_name', $this->template->title,'og');
+		$this->template->meta->add('publisher', 'Sewa Genset 88');
 		$this->template->meta->add('url', base_url(),'og');
 		$this->template->meta->add('description', $data['description'],'og');
 		$this->template->meta->add('title', $this->template->title,'og');

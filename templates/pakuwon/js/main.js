@@ -339,7 +339,7 @@ jQuery(document).ready(function ($) {
 			stagePadding: 0,
 			nav: true,
 			dots: false,
-			autoWidth:true,
+			autoWidth: true,
 			//autoWidth:true,
 			// autoHeight:true,
 			navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">'],
@@ -509,5 +509,24 @@ jQuery(document).ready(function ($) {
 		});
 	};
 	scrollWindow();
+	$(".filter-button").click(function () {
+		var value = $(this).attr('data-filter');
+
+		if (value == "all") {
+			//$('.filter').removeClass('hidden');
+			$('.filter').show('1000');
+		} else {
+			//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+			//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+			$(".filter").not('.' + value).hide('3000');
+			$('.filter').filter('.' + value).show('3000');
+
+		}
+	});
+
+	if ($(".filter-button").removeClass("active")) {
+		$(this).removeClass("active");
+	}
+	$(this).addClass("active");
 
 });

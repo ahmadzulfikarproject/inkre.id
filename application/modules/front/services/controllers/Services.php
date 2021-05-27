@@ -240,7 +240,7 @@ class Services extends MY_Controller
 		$id_post = $dat->row_array();
 		$data['title'] = $row->judul;
 		$string = character_limiter(strip_tags(html_entity_decode($row->isi_services)), 300);
-		$data['description'] = $string;
+		$data['description'] = ($row->meta_description) ? $row->meta_description : $string;
 		$data['ogimage'] = base_url() . webconfig('asset') . '/foto_services/' . $row->gambar;
 		$data['record'] = $this->model_utama_services->services_detail($ids)->row_array();
 		$data['slug'] = $slug;
@@ -260,7 +260,7 @@ class Services extends MY_Controller
 		$this->model_utama_services->services_update_count($ids);
 		//echo 'okehhhhhh';
 		//$this->add_count($slug);
-		$this->template->title = $data['title'];
+		$this->template->title = ($row->meta_title) ? $row->meta_title : $data['title'];
 		$this->template->meta->add('description', $data['description']);
 		$this->template->meta->add('keywords', $row->meta_keywords);
 		$this->template->meta->add('author', 'Ahmad Zulfikar');

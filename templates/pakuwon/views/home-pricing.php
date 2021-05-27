@@ -1,7 +1,10 @@
-<div class="col-md-12 text-center border-primary pb-4 mt-5">
-    <h2 class="font-weight-light text-primary mb-2">Daftar Harga</h2>
+<div class="row" data-aos="fade-up" data-aos-delay="400">
+
+    <div class="col-md-12 text-center border-primary pb-4 mt-5 mb-5">
+        <h2 class="font-weight-light text-primary mb-2">Daftar Harga</h2>
+    </div>
 </div>
-<div class="row">
+<div class="row" data-aos="fade-up" data-aos-delay="400">
     <div class="col-lg-12">
         <div class="table-responsive">
             <table class="table pricing table-stripedz table-hover text-center">
@@ -98,9 +101,7 @@
                         <th></th>
                         <th class=""></th>
                         <th class=""></th>
-                        <th class=""><a target='_blank'
-                                href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>"
-                                class="btn btn-primary btn-lg btn-block">Order</a></th>
+                        <th class=""><a target='_blank' href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>" class="btn btn-primary btn-lg btn-block">Order</a></th>
                     </tr>
                 </tfoot>
             </table>
@@ -108,11 +109,13 @@
     </div>
 </div>
 <hr>
-<div class="col-md-12 text-center border-primary pb-4">
-    <h2 class="font-weight-light text-primary mb-2">Fasilitas</h2>
+<div class="row">
+    <div class="col-md-12 text-center border-primary pb-4 mb-5">
+        <h2 class="font-weight-light text-primary mb-2">Fasilitas</h2>
+    </div>
 </div>
 <hr>
-<div class="row">
+<div class="row" data-aos="fade-up" data-aos-delay="400">
     <div class="col-lg-12">
         <div class="table-responsive">
             <table class="table pricing table-stripedz table-hover text-center">
@@ -168,9 +171,7 @@
                         <th></th>
                         <th class=""></th>
                         <th class=""></th>
-                        <th class=""><a target='_blank'
-                                href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>"
-                                class="btn btn-primary btn-lg btn-block">Order</a></th>
+                        <th class=""><a target='_blank' href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>" class="btn btn-primary btn-lg btn-block">Order</a></th>
                     </tr>
                 </tfoot>
             </table>
@@ -197,8 +198,7 @@
     </div>
     <div class="col mx-auto text-center">
         <hr>
-        <a target='_blank' href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>"
-            class="btn btn-primary btn-lg btn-block">Order</a>
+        <a target='_blank' href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>&text=Hai%20!%20Saya%20tertarik%20untuk%20sewa%20genset%20di%20sewagenset88.com" class="btn btn-primary btn-lg btn-block">Order</a>
         <hr>
     </div>
 </div>

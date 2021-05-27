@@ -11,7 +11,7 @@ $isi = substr($isi_berita, 0, strrpos($isi, " "));
         <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-                <h1 class="text-white font-weight-light text-uppercase font-weight-bold"><?php echo $record['judul'] ?></h1>
+                <h1 class="text-white font-weight-light text-uppercase"><?php echo $record['judul'] ?></h1>
                 <!-- <p class="breadcrumb-custom"><a href="index.html">Home</a> <span class="mx-2">&gt;</span> <span><?php echo $record['judul'] ?></span></p> -->
             </div>
         </div>

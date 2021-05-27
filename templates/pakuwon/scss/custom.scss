@@ -282,7 +282,8 @@ body {
         // height: 100px;
 
     }
-    .item{
+
+    .item {
         // height: 100px;
     }
 }
@@ -294,9 +295,10 @@ body {
 }
 
 @media (max-width: 768px) {
-    #Services{
-        background: darken($dark,5%);
+    #Services {
+        background: darken($dark, 5%);
     }
+
     footer {
         padding-bottom: 100px !important;
     }
@@ -444,17 +446,17 @@ body a:hover {
 
 .contact-form {
     .input-group-text {
-        color: lighten($primary, 50%);
+        color: lighten($white, 0%);
         background-color: $primary;
     }
 }
 
 .contact-bottom {
     .media {
-        color: lighten($primary, 0%);
+        color: lighten($white, 0%);
 
         p {
-            color: lighten($primary, 0%);
+            color: lighten($white, 0%);
         }
 
         i {
@@ -656,15 +658,17 @@ table.pricing {
 }
 
 .breadcrumb {
-    background-color: darken($primary, 15%);
-    color: lighten($primary, 30%);
+    background-color: darken($warning, 0%);
+    color: darken($warning, 100%);
 
     a {
-        color: lighten($primary, 50%);
+        color: darken($warning, 90%);
         padding: 5px 10px;
+        font-weight: bold;
 
         &:hover {
-            color: lighten($primary, 20%);
+            color: darken($warning, 80%);
+            padding-left: 20px;
         }
     }
 }
@@ -677,21 +681,95 @@ table.pricing {
 }
 
 #categories_list {
-    li{
+    li {
         display: block;
         width: 100%;
-        &.active a{
+
+        &.active a {
             color: white;
         }
     }
 
 }
-iframe{
+
+iframe {
     max-width: 100%;
 }
-#Services{
-    .unit-1 .unit-1-text .unit-1-heading{
+
+#Services {
+    .unit-1 .unit-1-text .unit-1-heading {
         // color: $stabilo;
         font-size: 1rem;
     }
+}
+
+.gallery-title {
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 7.5%;
+        left: 46.5%;
+        height: 45px;
+        border-bottom: 1px solid #5e5e5e;
+    }
+}
+
+
+.filter-button {
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
+    &:hover {
+        font-size: 18px;
+        border: 1px solid #42B32F;
+        border-radius: 5px;
+        text-align: center;
+        color: #ffffff;
+        background-color: #42B32F;
+
+    }
+}
+
+
+.btn-default:active .filter-button:active {
+    background-color: #42B32F;
+    color: white;
+}
+
+.port-image {
+    width: 100%;
+}
+
+.gallery_product {
+    margin-bottom: 30px;
+}
+
+// whatsapp
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.my-float {
+    margin-top: 16px;
 }

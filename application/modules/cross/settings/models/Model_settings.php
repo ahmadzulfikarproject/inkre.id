@@ -104,14 +104,18 @@ class Model_settings extends CI_Model
         // $logo = $this->upload->data();
         // $lastid = $this->db->insert_id();
         // $logo['file_name'];
+        // print_r($this->input->post());
         foreach ($this->input->post() as $k => $v) {
+            // echo $k .'</br>';
             // does $k exist in the db?
             // if so, update it.
             if (!$this->db->where('name', $k)->update('settings', ['value' => $v])) {
+
                 // no, someone adding stuff to the
                 // post()?  fail and bail!
                 return false;
             }
+            // return false;
         }
 
         $header = $this->_uploadImage('site_header');
@@ -123,6 +127,12 @@ class Model_settings extends CI_Model
         $favicon = $this->_uploadImage('site_favicon');
         // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
         $favicon ? $this->db->where('name', 'site_favicon')->update('settings', ['value' => $favicon]) : '';
+        $bg1 = $this->_uploadImage('site_bg1');
+        // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
+        $bg1 ? $this->db->where('name', 'site_bg1')->update('settings', ['value' => $bg1]) : '';
+        $site_background = $this->_uploadImage('site_background');
+        // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
+        $site_background ? $this->db->where('name', 'site_background')->update('settings', ['value' => $site_background]) : '';
 
         // something's gone wrong, fail and bail
         return false;
@@ -141,15 +151,17 @@ class Model_settings extends CI_Model
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
-
+        $settingsku = $this->db->where('name', $name)->limit(1)->get('settings')->row();
         if ($this->upload->do_upload($name)) {
             // getnameimg('../asset/settings/' . $oldimage, 'foto_berita');
+            // getnameimg('../asset/settings/' . $settingsku->value, 'settings');
             return $this->upload->data("file_name");
         }
         // $new_name = '';
         unset($new_name);
+        unset($new_name);
         unset($name);
-        unset($config);
+        unset($settingsku);
         // return "default.jpg";
     }
 
@@ -168,5 +180,4 @@ class Model_settings extends CI_Model
     {
         return $this->db->where('required', 1)->get('settings')->result();
     }
-    
 }

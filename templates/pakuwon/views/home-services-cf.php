@@ -7,14 +7,14 @@
   $jumlah = $this->model_utama_services->semua_services(0, 12)->num_rows();
   //foreach ($headline->result_array() as $row): ?>
 <?php if ($jumlah > 1): ?>
-<section id="Services" class="ftco-sectionz ftco-properties bg-primary text-white">
-  <div class="container overlap-section">
-    <!-- <div class="row justify-content-center mb-5 pb-3">
+<section id="Services" class="ftco-sectionz ftco-properties text-primary bg-white pb-5 pt-5" data-aos="fade-up">
+  <div class="container overlap-sectionz">
+    <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 border-primary text-center ftco-animate">
-        <h2 class="font-weight-light text-white">Recent Services</h2>
-        <span class="subheading">Services</span>
+        <h2 class="font-weight-light text-primary">Recent Services</h2>
+        <span class="subheading ">jasa dan layanan kami</span>
       </div>
-    </div> -->
+    </div>
     <div class="row">
       <div class="col-md-12">
         <div class="services-slider owl-carousel ftco-animate">
@@ -44,7 +44,7 @@
                   <span class="icon-search2"></span>
                 </div>
               </div>
-              <div class="text p-3 bg-success text-white border border-0">
+              <div class="text p-3 bg-primary text-primary border border-0 hidden">
                 <!-- <span class="status sale">Sale</span> -->
                 <div class="d-flex">
                   <div class="">
@@ -55,6 +55,15 @@
               </div>
               <div class="box-shadow"></div>
             </div>
+            <div class="text p-3 bg-primaryz text-primary border border-0">
+                <!-- <span class="status sale">Sale</span> -->
+                <div class="d-flex">
+                  <div class="">
+                    <h3><a class="text-lightz text-primary" href="<?php echo base_url()."services/detail/".$row['slug']; ?>"><?php echo $row['judul'] ?></a></h3>
+                    <!-- <p><?php echo $isi; ?></p> -->
+                  </div>
+                </div>
+              </div>
           </div>
           <?php endforeach;?>
         </div>

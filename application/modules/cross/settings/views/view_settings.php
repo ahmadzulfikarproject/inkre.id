@@ -42,7 +42,7 @@
                     <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                         <?php $count = 0 ?>
                         <?php foreach ($settings as $tab) : ?>
-                            <li role="presentation" <?php if ($count == 0) echo ' class="active"' ?>><a href="#<?= $tab->tab ?>" aria-controls="<?= $tab->tab ?>" role="tab" data-toggle="tab"><?= ucfirst($tab->tab) ?></a></li>
+                            <li role="presentation" <?php if ($count == 3) echo ' class="active"' ?>><a href="#<?= $tab->tab ?>" aria-controls="<?= $tab->tab ?>" role="tab" data-toggle="tab"><?= ucfirst($tab->tab) ?></a></li>
                             <?php $count++ ?>
                         <?php endforeach ?>
                         <!-- <li role="presentation" class=""><a href="#tab_content1" id="content-tab" role="tab" data-toggle="tab" aria-expanded="true">Content</a>
@@ -53,7 +53,7 @@
                     <div id="myTabContent" class="tab-content">
                         <?php $count = 0 ?>
                         <?php foreach ($settings as $tab) : ?>
-                            <div role="tabpanel" class="tab-pane fade<?php echo ($count == 0) ? ' in active' : ''; ?>" id="<?= $tab->tab ?>">
+                            <div role="tabpanel" class="tab-pane fade<?php echo ($count == 3) ? ' in active' : ''; ?>" id="<?= $tab->tab ?>">
                                 <?php if ($tab->tab == 'seo') : ?>
                                     <h3>Search Engine Optimization (SEO)</h3>
                                     <p>Pengatuan seo yang baik dapat membantu pencarian ke website ini menjadi lebih optimal</p>
@@ -304,7 +304,7 @@ ob_start();
         var imageinput = $("input.imgupload");
         imageinput.on('change', function(e) {
             //checkboxValidator(chk, form, 2);
-            alert('check');
+            // alert('check');
             readURL(e.target);
             // $(e.target).closest('.img-group').find('img').attr('src', '');
         });

@@ -7,8 +7,8 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 //print_r($contacts);
 ?>
 <div class="row align-items-center justify-content-center d-flex">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 py-4"><img class="shadow bg-white rounded" src="<?php echo base_url("asset/foto_contact/" . $contacts['gambar']); ?>" alt=""></div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" data-aos="zoom-in-up" data-aos-once="true">
+	<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 py-12"><img class="shadow bg-white rounded" src="<?php echo base_url("asset/foto_contact/" . $contacts['gambar']); ?>" alt=""></div> -->
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" data-aos="zoom-in-up" data-aos-once="true">
 		<div class="contact-bottom">
 			<h2 class="mb-4"><strong>Contact</strong> Us</h2>
 			<!-- <h5 class="mb-3"><?php echo $contacts['nama']; ?></h5> -->
@@ -88,7 +88,7 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 			?>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2" data-aos="zoom-in-up" data-aos-once="true">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" data-aos="zoom-in-up" data-aos-once="true">
 		<div id="follow-us">
 			<h2 class="mb-4">Follow us</h2>
 			<h2>

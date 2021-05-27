@@ -267,7 +267,7 @@
 			$id_post = $dat->row_array();
 			$data['title'] = $row->judul;
 			$string = character_limiter(strip_tags(html_entity_decode($row->isi_products)), 300);
-			$data['description'] = $string;
+			$data['description'] = ($row->meta_description) ? $row->meta_description : $string;
 			$data['ogimage'] = base_url() . webconfig('asset') . '/foto_products/' . $row->gambar;
 			$data['record'] = $this->model_utama->products_detail($ids)->row_array();
 			$data['slug'] = $slug;
@@ -288,7 +288,8 @@
 			$this->model_utama->products_update_count($ids);
 			//echo 'okehhhhhh';
 			//$this->add_count($slug);
-			$this->template->title = $data['title'];
+			$this->template->title = ($row->meta_title) ? $row->meta_title : $data['title'] ;
+			$this->template->meta->add('publisher', 'Sewa Genset 88');
 
 			// Dynamically add a css stylesheet
 			//$this->template->stylesheet->add('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');

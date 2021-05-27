@@ -1,4 +1,4 @@
-<nav class="site-navigation shadow rounded bg-primary position-relative text-right px-4" role="navigation">
+<nav class="site-navigation shadowz roundedz bg-primaryz position-relative text-right px-4" role="navigation">
 
   <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
     <?php echo build_bootstrapnavnew('menuutama',

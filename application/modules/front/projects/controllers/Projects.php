@@ -246,7 +246,7 @@ class Projects extends MY_Controller
 		$id_post = $dat->row_array();
 		$data['title'] = $row->judul;
 		$string = character_limiter(strip_tags(html_entity_decode($row->isi_projects)), 300);
-		$data['description'] = $string;
+		$data['description'] = ($row->meta_description) ? $row->meta_description : $string;
 		$data['ogimage'] = base_url() . webconfig('asset') . '/foto_projects/' . $row->gambar;
 		$data['record'] = $this->model_utama_projects->projects_detail($ids)->row_array();
 		$data['slug'] = $slug;
@@ -266,7 +266,7 @@ class Projects extends MY_Controller
 		$this->model_utama_projects->projects_update_count($ids);
 		//echo 'okehhhhhh';
 		//$this->add_count($slug);
-		$this->template->title = $data['title'];
+		$this->template->title = ($row->meta_title) ? $row->meta_title : $data['title'];
 		$this->template->meta->add('description', $data['description']);
 		$this->template->meta->add('keywords', $row->meta_keywords);
 		$this->template->meta->add('author', 'Ahmad Zulfikar');
@@ -280,6 +280,7 @@ class Projects extends MY_Controller
 		$this->template->meta->add('title', $this->template->title, 'og');
 		$this->template->meta->add('type', 'website', 'og');
 		$this->template->meta->add('locale', 'id_ID', 'og');
+		$this->template->meta->add('publisher', 'Sewa Genset 88');
 		// Dynamically add a css stylesheet
 		//$this->template->stylesheet->add('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
 		$this->breadcrumbs->push('Projects', 'projects');

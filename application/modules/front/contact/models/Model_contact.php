@@ -4,6 +4,9 @@ class Model_contact extends CI_model{
 	function contact_detail($id){
         return $this->db->query("SELECT * FROM contact where slug='".$this->db->escape_str($id)."'");
     }
+	function contact($id){
+        return $this->db->query("SELECT * FROM contact where id_contact='".$this->db->escape_str($id)."'");
+    }
 
 	function contactstatis(){
         return $this->db->query("SELECT * FROM halamanstatis ORDER BY id_halaman DESC");
