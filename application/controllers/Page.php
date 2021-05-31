@@ -71,7 +71,7 @@ class Page extends MY_Controller
 		}
 		// set your feed's title, description, link, pubdate and language
 		$posts = $data['page']->result();
-		$feed->title = setting('site_name');
+		$feed->title = setting('meta_title') ? setting('meta_title') : setting('site_name');
 		$feed->description = setting('site_description');
 		$feed->link = base_url('page/feed');
 		$feed->lang = 'id';

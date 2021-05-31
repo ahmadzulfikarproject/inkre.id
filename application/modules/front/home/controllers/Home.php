@@ -69,7 +69,7 @@ class Home extends MY_Controller
 		// create new instance
 		$feed = new Feed();
 		
-		$feed->title = setting('site_name');
+		$feed->title = setting('meta_title') ? setting('meta_title') : setting('site_name');
 		$feed->description = setting('site_description');
 		$feed->link = base_url();
 		$feed->lang = 'id';
