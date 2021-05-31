@@ -78,7 +78,7 @@
     <div id="top-header" class="py-2 text-white text-center bg-primary text-white">
       <div class="container">
         <div class="row align-items-center justify-content-center bg-warning overlap-section shadow-lg p-md-4">
-          <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-2" data-aos="fade-up" data-aos-delay="400">
             <div class="site-navbar-logo p-0">
               <div class="mb-0 text-center"><a href="<?php echo base_url(); ?>" class="text-white h2 mb-0"><img src="<?php echo home_url() . 'asset/settings/' . setting('site_logo'); ?>"></a></div>
             </div>
@@ -101,13 +101,23 @@
             <!-- <h3 class="mb-0 font-weight-light text-uppercase font-weight-bold"><?php echo setting('site_name') ?></h3> -->
             <!-- <p class="mb-0"><?php echo setting('site_description') ?></p> -->
           </div>
-          <div class="col-md-3 text-lg-left d-none d-sm-block" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-4 text-lg-left d-none d-sm-block" data-aos="fade-up" data-aos-delay="400">
             <div class="media">
               <i class="icon icon-mail_outline align-self-center mr-3 h1" style="margin:0 10px 0 0"></i>
               <div class="media-body">
                 <!-- <h5>Chat</h5> -->
                 <p class="mb-0">Email</p>
-                <a target='_blank' href="mailto:<?= Globals::idContact()->email ?>?subject = Sewa Genset&body = Hai%20!%20Saya%20tertarik%20untuk%20sewa%20genset%20di%20sewagenset88.com" class="font-weight-bold"><?= Globals::idContact()->email ?></a>
+                
+                <?php if (!empty(Globals::idContact()->email)) : ?>
+
+                  <!-- <h5 class="mt-0 mb-1">Hubungi Kami Sekarang !</h5> -->
+                  <div class="font-weight-bold">
+
+                    <?php listitem(Globals::idContact()->email, 'email'); ?>
+                  </div>
+
+                <?php endif; ?>
+                <!-- <a target='_blank' href="mailto:<?= Globals::idContact()->email ?>?subject = Sewa Genset&body = Hai%20!%20Saya%20tertarik%20untuk%20sewa%20genset%20di%20sewagenset88.com" class="font-weight-bold"><?= Globals::idContact()->email ?></a> -->
               </div>
             </div>
             <!-- <h3 class="mb-0 font-weight-light text-uppercase font-weight-bold"><?php echo setting('site_name') ?></h3> -->
