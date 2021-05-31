@@ -18,7 +18,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 </head>
-<body>
+<body style="background-image: url(<?php echo home_url() . 'asset/settings/' . setting('site_bg1'); ?>);">
   <?php echo $contents; ?>
 </body>
 </html>
