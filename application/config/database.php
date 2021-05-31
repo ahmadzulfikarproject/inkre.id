@@ -99,9 +99,9 @@ elseif (ENVIRONMENT == 'production') {
 	$db['default'] = array(
 		'dsn'	=> '',
 		'hostname' => 'localhost',
-		'username' => 'pakuwonr_pkw',
-		'password' => '$+MB6{cs1N(D',
-		'database' => 'pakuwonr_pakuwonresidencesbekasi.info',
+		'username' => 'forklift_sewagenset88v1',
+		'password' => 'ry3%#EA._$3=',
+		'database' => 'forklift_sewagenset88v1',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => FALSE,
