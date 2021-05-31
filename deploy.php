@@ -15,7 +15,7 @@ $commands = array(
     'git submodule sync',
     'git submodule update',
     'git submodule status',
-    'sh ~/repositories/pakuwonresidencesbekasi.info/.git/hooks/post-receive',
+    'sh ~/repositories/sewagenset88.com/.git/hooks/post-receive',
 );
 // Run the commands for output
 $output = '';
