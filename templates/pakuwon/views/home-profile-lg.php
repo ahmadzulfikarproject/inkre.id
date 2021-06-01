@@ -12,7 +12,7 @@ $idwebsite = $this->model_identitas->identitas()->row_array();
     <div class="container" data-aos="fade-right" data-aos-delay="400">
 
         <div class="row align-items-top justify-content-center d-flex">
-            <div class="col-md-4 order-md-2">
+            <div class="col-md-4 order-md-2 pb-5 pb-sm-0">
                 <img alt="<?php echo $data['judul'] ?>" class="thumbnail shadow bg-white rounded" src="<?php echo base_url(image("asset/foto_statis/" . $data['gambar'], "large")); ?>" />
                 <div class="hidden responsive-container imgz d-flex justify-content-center align-items-center" style="border-width: 10px;">
                     <div class="dummy50"></div>

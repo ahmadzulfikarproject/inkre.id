@@ -75,18 +75,18 @@
 
   <?php if (is_home()) : ?>
     <?php $this->template->includeview('../../templates/' . template() . '/views/home-slideshow');  ?>
-    <div id="top-header" class="py-2 text-white text-center bg-primary text-white">
+    <div id="top-header" class="py-2 text-white text-center bg-primary text-white p-sm-5">
       <div class="container">
         <div class="row align-items-center justify-content-center bg-warning overlap-section shadow-lg p-md-4">
-          <div class="col-md-2" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-2 d-none d-sm-block" data-aos="fade-up" data-aos-delay="400">
             <div class="site-navbar-logo p-0">
               <div class="mb-0 text-center"><a href="<?php echo base_url(); ?>" class="text-white h2 mb-0"><img src="<?php echo home_url() . 'asset/settings/' . setting('site_logo'); ?>"></a></div>
             </div>
             <!-- <img data-src="holder.js/200x70" alt="..." class="slide-caption-img d-none d-lg-block d-xl-block"> -->
           </div>
-          <div class="col-md-3 text-lg-left d-none d-sm-block" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-3 text-lg-left d-nonez d-sm-blockz" data-aos="fade-up" data-aos-delay="400">
             <div class="media">
-              <i class="icon icon-phone align-self-center mr-3 h1" style="margin:0 10px 0 0"></i>
+              <i class="icon icon-phone align-self-center mr-3 h1 d-none d-sm-block" style="margin:0 10px 0 0"></i>
               <div class="media-body">
                 <!-- <h5>Telpon</h5> -->
                 <p class="mb-0">Hubungi Kami.</p>
@@ -94,7 +94,7 @@
               </div>
             </div>
             <div class="media-body hidden">
-              <i class="icon icon-map-marker align-self-center mr-3 h1" style="margin:0 10px 0 0"></i>
+              <i class="icon icon-map-marker align-self-center mr-3 h1 d-none d-sm-block" style="margin:0 10px 0 0"></i>
               <!-- <h5>Telpon</h5> -->
               <a target='_blank' href="tel:<?= Globals::idContact()->mobile ?>" class="btn btn-default"><?= Globals::idContact()->mobile ?></a>
             </div>
@@ -103,7 +103,7 @@
           </div>
           <div class="col-md-4 text-lg-left d-none d-sm-block" data-aos="fade-up" data-aos-delay="400">
             <div class="media">
-              <i class="icon icon-mail_outline align-self-center mr-3 h1" style="margin:0 10px 0 0"></i>
+              <i class="icon icon-mail_outline align-self-center mr-3 h1 d-none d-sm-block" style="margin:0 10px 0 0"></i>
               <div class="media-body">
                 <!-- <h5>Chat</h5> -->
                 <p class="mb-0">Email</p>
@@ -123,9 +123,9 @@
             <!-- <h3 class="mb-0 font-weight-light text-uppercase font-weight-bold"><?php echo setting('site_name') ?></h3> -->
             <!-- <p class="mb-0"><?php echo setting('site_description') ?></p> -->
           </div>
-          <div class="col-md-3 text-lg-left" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md-3 text-lg-left d-none d-sm-block" data-aos="fade-up" data-aos-delay="400">
             <div class="media">
-              <i class="icon icon-map-marker align-self-center mr-3 h1" style="margin:0 10px 0 0"></i>
+              <i class="icon icon-map-marker align-self-center mr-3 h1 d-none d-sm-block" style="margin:0 10px 0 0"></i>
               <div class="media-body">
                 <!-- <h5>Location</h5> -->
                 <p class="mb-0"><?= Globals::idContact()->alamat; ?></p>

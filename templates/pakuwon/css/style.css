@@ -622,6 +622,10 @@ h1, h2, h3, h4, h5,
   .site-blocks-cover,
   .site-blocks-cover .row {
     height: 40vw; }
+    @media (max-width: 767.98px) {
+      .site-blocks-cover,
+      .site-blocks-cover .row {
+        height: auto; } }
   .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover .row {
     height: 20vw; }
   .site-blocks-cover.inner-page-cover,

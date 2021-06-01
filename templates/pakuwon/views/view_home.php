@@ -4,7 +4,7 @@
 ?>
 <?php //$this->template->includeview('../../templates/'.template().'/views/home-services-cf'); 
 ?>
-<div class="site-blocks-cover overlay call" style="background-image: url(<?php echo home_url() . 'asset/settings/' . setting('site_background'); ?>);" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover overlay call p-5" style="background-image: url(<?php echo home_url() . 'asset/settings/' . setting('site_background'); ?>);" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -21,10 +21,10 @@
 </div>
 <?php //$this->template->includeview('../../templates/'.template().'/views/home-products-cf'); 
 ?>
-<section class="pt-5 pb-5">
+<section class="pt-5 pb-5 hidden">
     <div class="container">
 
-        <?php $this->template->includeview('../../templates/'.template().'/views/home-pricing');?>
+        <?php //$this->template->includeview('../../templates/'.template().'/views/home-pricing');?>
     </div>
     
 </section>

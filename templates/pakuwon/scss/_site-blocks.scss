@@ -45,6 +45,9 @@
 		// min-height: 600px;
 		// height: calc(100vh);
 		height: 40vw;
+		@include media-breakpoint-down(sm) {
+			height: auto;
+		}
 	}
 	&.inner-page-cover, &.inner-page-cover .row{
 		height: 20vw;
