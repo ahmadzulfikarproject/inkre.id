@@ -603,7 +603,6 @@ h1, h2, h3, h4, h5,
 .site-blocks-cover {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
   background-position: center center; }
   .site-blocks-cover.overlay {
     position: relative; }
@@ -625,6 +624,7 @@ h1, h2, h3, h4, h5,
     @media (max-width: 767.98px) {
       .site-blocks-cover,
       .site-blocks-cover .row {
+        text-align: center;
         height: auto; } }
   .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover .row {
     height: 20vw; }
@@ -955,6 +955,16 @@ h1, h2, h3, h4, h5,
       animation-timing-function: ease-out;
   }
   */ }
+  .slide-one-item.home-slider,
+  .slide-one-item.home-slider .row {
+    height: 40vw; }
+    @media (max-width: 767.98px) {
+      .slide-one-item.home-slider,
+      .slide-one-item.home-slider .row {
+        text-align: center;
+        height: auto;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 50px 20px; } }
   .slide-one-item.home-slider .owl-nav {
     position: absolute !important;
     top: 50% !important;
@@ -1005,10 +1015,10 @@ h1, h2, h3, h4, h5,
     -o-animation-fill-mode: both;
     animation-fill-mode: both; }
   .slide-one-item.home-slider .owl-item.active .slide-caption h2 {
-    -webkit-animation-name: lightSpeedIn;
-    -moz-animation-name: lightSpeedIn;
-    -o-animation-name: lightSpeedIn;
-    animation-name: lightSpeedIn;
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
     -webkit-animation-timing-function: ease-out;
     -moz-animation-timing-function: ease-out;
     -o-animation-timing-function: ease-out;
@@ -1018,10 +1028,10 @@ h1, h2, h3, h4, h5,
     animation-delay: 0.5s;
     -o-animation-delay: 0.5s; }
   .slide-one-item.home-slider .owl-item.active .slide-caption .slide-caption-description {
-    -webkit-animation-name: lightSpeedIn;
-    -moz-animation-name: lightSpeedIn;
-    -o-animation-name: lightSpeedIn;
-    animation-name: lightSpeedIn;
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
     -webkit-animation-timing-function: ease-out;
     -moz-animation-timing-function: ease-out;
     -o-animation-timing-function: ease-out;
@@ -1031,10 +1041,10 @@ h1, h2, h3, h4, h5,
     animation-delay: 0.7s;
     -o-animation-delay: 0.7s; }
   .slide-one-item.home-slider .owl-item.active .slide-caption .slide-caption-btn {
-    -webkit-animation-name: lightSpeedIn;
-    -moz-animation-name: lightSpeedIn;
-    -o-animation-name: lightSpeedIn;
-    animation-name: lightSpeedIn;
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
     -webkit-animation-timing-function: ease-out;
     -moz-animation-timing-function: ease-out;
     -o-animation-timing-function: ease-out;
@@ -1044,10 +1054,10 @@ h1, h2, h3, h4, h5,
     animation-delay: 0.8s;
     -o-animation-delay: 0.8s; }
   .slide-one-item.home-slider .owl-item.active .slide-caption-img {
-    -webkit-animation-name: lightSpeedIn;
-    -moz-animation-name: lightSpeedIn;
-    -o-animation-name: lightSpeedIn;
-    animation-name: lightSpeedIn;
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
     -webkit-animation-timing-function: ease-out;
     -moz-animation-timing-function: ease-out;
     -o-animation-timing-function: ease-out;

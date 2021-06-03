@@ -1,4 +1,5 @@
-.site-footer{
+.site-footer {
+
 	// background-color: rgba($black, 0);
 	&.overlay {
 		position: relative;
@@ -14,10 +15,11 @@
 		}
 	}
 }
+
 .site-blocks-cover {
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: top;
+	// background-position: top;
 	background-position: center center;
 
 	&.overlay {
@@ -45,13 +47,20 @@
 		// min-height: 600px;
 		// height: calc(100vh);
 		height: 40vw;
+
 		@include media-breakpoint-down(sm) {
+			text-align: center;
 			height: auto;
+			// background: rgba($black, .8);
+			// padding: 50px 20px;
 		}
 	}
-	&.inner-page-cover, &.inner-page-cover .row{
+
+	&.inner-page-cover,
+	&.inner-page-cover .row {
 		height: 20vw;
 	}
+
 	&.inner-page-cover {
 
 		&,
@@ -100,8 +109,10 @@
 			font-size: $font-size-base + 2rem;
 		}
 	}
+
 	.bigtitle {
 		font-size: 2rem;
+
 		@media (min-width: 768px) {
 			& {
 				font-size: 4rem;
@@ -491,6 +502,21 @@
 
 .slide-one-item {
 	&.home-slider {
+
+		&,
+		.row {
+			// min-height: 600px;
+			// height: calc(100vh);
+			height: 40vw;
+
+			@include media-breakpoint-down(sm) {
+				text-align: center;
+				height: auto;
+				background: rgba($black, .8);
+				padding: 50px 20px;
+			}
+		}
+
 		.owl-nav {
 			// transition: .3s all ease-in-out;
 			// opacity: 0;
@@ -572,10 +598,10 @@
 	}
 
 	&.home-slider .owl-item.active .slide-caption h2 {
-		-webkit-animation-name: lightSpeedIn;
-		-moz-animation-name: lightSpeedIn;
-		-o-animation-name: lightSpeedIn;
-		animation-name: lightSpeedIn;
+		-webkit-animation-name: fadeInUp;
+		-moz-animation-name: fadeInUp;
+		-o-animation-name: fadeInUp;
+		animation-name: fadeInUp;
 		-webkit-animation-timing-function: ease-out;
 		-moz-animation-timing-function: ease-out;
 		-o-animation-timing-function: ease-out;
@@ -599,10 +625,10 @@
 	}
 	*/
 	&.home-slider .owl-item.active .slide-caption .slide-caption-description {
-		-webkit-animation-name: lightSpeedIn;
-		-moz-animation-name: lightSpeedIn;
-		-o-animation-name: lightSpeedIn;
-		animation-name: lightSpeedIn;
+		-webkit-animation-name: fadeInUp;
+		-moz-animation-name: fadeInUp;
+		-o-animation-name: fadeInUp;
+		animation-name: fadeInUp;
 		-webkit-animation-timing-function: ease-out;
 		-moz-animation-timing-function: ease-out;
 		-o-animation-timing-function: ease-out;
@@ -626,10 +652,10 @@
 	}
 	*/
 	&.home-slider .owl-item.active .slide-caption .slide-caption-btn {
-		-webkit-animation-name: lightSpeedIn;
-		-moz-animation-name: lightSpeedIn;
-		-o-animation-name: lightSpeedIn;
-		animation-name: lightSpeedIn;
+		-webkit-animation-name: fadeInUp;
+		-moz-animation-name: fadeInUp;
+		-o-animation-name: fadeInUp;
+		animation-name: fadeInUp;
 		-webkit-animation-timing-function: ease-out;
 		-moz-animation-timing-function: ease-out;
 		-o-animation-timing-function: ease-out;
@@ -653,10 +679,10 @@
 	}
 	*/
 	&.home-slider .owl-item.active .slide-caption-img {
-		-webkit-animation-name: lightSpeedIn;
-		-moz-animation-name: lightSpeedIn;
-		-o-animation-name: lightSpeedIn;
-		animation-name: lightSpeedIn;
+		-webkit-animation-name: fadeInUp;
+		-moz-animation-name: fadeInUp;
+		-o-animation-name: fadeInUp;
+		animation-name: fadeInUp;
 		-webkit-animation-timing-function: ease-out;
 		-moz-animation-timing-function: ease-out;
 		-o-animation-timing-function: ease-out;
@@ -666,7 +692,8 @@
 		animation-delay: 0.8s;
 		-o-animation-delay: 0.8s;
 	}
-	&.home-slider .site-blocks-cover.overlay:before{
+
+	&.home-slider .site-blocks-cover.overlay:before {
 		display: none;
 	}
 }

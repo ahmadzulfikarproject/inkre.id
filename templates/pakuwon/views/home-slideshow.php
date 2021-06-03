@@ -26,10 +26,9 @@ $jumlah = count($headline->result_array());
         <!-- <div class="col">
           <img data-src="holder.js/600x400" alt="..." class="slide-caption-img d-none d-lg-block d-xl-block">
         </div> -->
-        <div class="col-8 slide-caption">
-            <span class="d-inline-blockz hidden bg-success text-white px-3 mb-3 property-offer-type rounded hidden">For Rent</span>
+        <div class="col-md-6 slide-caption">
             <h2 class="mb-2 bigtitle text-white font-weight-bold text-uppercasez"><?php echo $row['judul'] ?></h2>
-            <p class="mb-5 text-white slide-caption-description d-none d-sm-block"><?php echo $isi ?></p>
+            <p class="mb-5 text-white slide-caption-description d-nonez d-sm-blockz"><?php echo $isi ?></p>
             <!-- <p class="slide-caption-btn text-white hidden-xs"><a href="<?php echo base_url(''); ?>" class="btn btn-whitez btn-primary btn-outline-white py-3 px-5 rounded-0 btn-2">See Details</a></p> -->
           <!-- <div class="row hidden">
             <div class="col-lg-3">
@@ -40,7 +39,7 @@ $jumlah = count($headline->result_array());
             </div>
           </div> -->
         </div>
-        <div class="col-4"></div>
+        <div class="col-md-6"></div>
       </div>
     </div>
   </div>
