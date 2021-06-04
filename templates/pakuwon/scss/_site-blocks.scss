@@ -508,11 +508,12 @@
 			// min-height: 600px;
 			// height: calc(100vh);
 			height: 40vw;
+			background-color: lighten($primary, 10%);
 
 			@include media-breakpoint-down(sm) {
 				text-align: center;
 				height: auto;
-				background: rgba($black, .8);
+				// background: rgba($black, .8);
 				padding: 50px 20px;
 			}
 		}

@@ -74,10 +74,10 @@
   </header>
 
   <?php if (is_home()) : ?>
-    <?php $this->template->includeview('../../templates/' . template() . '/views/home-slideshow');  ?>
+    <?php $this->template->includeview('../../templates/' . template() . '/views/home-slideshow-flex');  ?>
     <div id="top-header" class="py-2 text-white text-center bg-primary text-white p-sm-5">
       <div class="container">
-        <div class="row align-items-center justify-content-center bg-warning overlap-section shadow-lg p-md-4">
+        <div class="row align-items-center justify-content-center bg-warning overlap-section shadow-lg p-md-4 p-5">
           <div class="col-md-2 d-none d-sm-block" data-aos="fade-up" data-aos-delay="400">
             <div class="site-navbar-logo p-0">
               <div class="mb-0 text-center"><a href="<?php echo base_url(); ?>" class="text-white h2 mb-0"><img src="<?php echo home_url() . 'asset/settings/' . setting('site_logo'); ?>"></a></div>

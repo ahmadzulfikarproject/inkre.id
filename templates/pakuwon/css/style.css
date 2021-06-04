@@ -957,13 +957,13 @@ h1, h2, h3, h4, h5,
   */ }
   .slide-one-item.home-slider,
   .slide-one-item.home-slider .row {
-    height: 40vw; }
+    height: 40vw;
+    background-color: #071f56; }
     @media (max-width: 767.98px) {
       .slide-one-item.home-slider,
       .slide-one-item.home-slider .row {
         text-align: center;
         height: auto;
-        background: rgba(0, 0, 0, 0.8);
         padding: 50px 20px; } }
   .slide-one-item.home-slider .owl-nav {
     position: absolute !important;

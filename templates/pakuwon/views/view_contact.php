@@ -137,7 +137,8 @@
                       <?php if (!empty($record['mobile'])) : ?>
                         <ul class="list-unstyled nolist">
                           <?php foreach ($mobile as $key => $value) {
-                            echo '<li>' . $value . '</li>';
+                            // echo '<li>' . $value . '</li>';
+                            echo '<a target="blank" href="tel:', $value, '" class="font-weight-bold text-uppercase">' . $value . '</a>';
                             # code...
                           } ?>
                         </ul>
@@ -162,7 +163,9 @@
                       <h5 class="mt-0 mb-1">Chat Dengan Kami dengan Whatsapp</h5>
                       <ul class="list-unstyled nolist">
                         <?php foreach ($wa as $key => $value) {
-                          echo '<li>' . $value . '</li>';
+                          //echo '<li>' . $value . '</li>';
+                          echo '<li><a href="https://api.whatsapp.com/send?phone=62' . $value . '&text=Hai%20!%20Saya%20tertarik%20untuk%20sewa%20genset%20di%20sewagenset88.com" class="font-weight-bold" target="_blank" data-aos="fade-up">
+    <i class="fa fa-whatsapp"></i> ' . $value . '</a></li>';
                           # code...
                         } ?>
                       </ul>

@@ -1,4 +1,6 @@
 jQuery(document).ready(function ($) {
+	$(".site-wrap").height($('.site-navbar').outerHeight());
+	
 	$("#promo").modal('show');
 	"use strict";
 	var delay = 0;
