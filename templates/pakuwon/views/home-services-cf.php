@@ -24,7 +24,9 @@
           //$isi = substr($content,0,100);
           $isi = word_limiter($content, 4);
           //$isi = substr($content,0,strrpos($isi," "));
-          if ($row['gambar'] == ''){ $foto = 'nophoto.jpg'; }else{ $foto = $row['gambar']; }
+          //if ($row['gambar'] == ''){ $foto = 'nophoto.jpg'; }else{ $foto = $row['gambar']; }
+          
+          $foto = ($row['gambar']) ? getnameimage($row['gambar'],'_200_400') : 'nophoto.jpg' ;
           ?>
           <div class="item" data-aos="fade-up" data-aos-delay="0">
             <div class="properties bg-light p-2">
