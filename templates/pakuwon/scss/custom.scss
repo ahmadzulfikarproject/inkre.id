@@ -773,3 +773,56 @@ iframe {
 .my-float {
     margin-top: 16px;
 }
+
+
+.card-pricing {
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    margin-bottom: 30px;
+}
+
+.card-pricing:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-pricing .card-heading {
+    padding: 20px 10px;
+}
+
+.card-pricing .card-heading {
+    .fa,.fas {
+        margin-top: 10px;
+        font-size: 58px;
+    }
+}
+
+
+.card-pricing .list-group-item {
+    color: #777777;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.5);
+}
+
+.card-pricing .list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.card-pricing .list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.card-pricing .card-body {
+    background-color: #f0f0f0;
+    font-size: 40px;
+    color: #777777;
+    padding: 20px;
+    margin: 0px;
+    font-weight: 500;
+}
+
+.card-pricing .card-footer .btn-lg {
+    font-size: 14px;
+
+}
