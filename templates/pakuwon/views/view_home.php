@@ -53,7 +53,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body card-body text-center">
+                    <div class="card-body card-body text-center bg-info text-white">
                         <p><strong>5 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">
@@ -77,7 +77,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-secondary text-white">
                         <p><strong>20 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">
@@ -101,7 +101,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-success text-white">
                         <p><strong>40 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">
@@ -125,7 +125,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-danger text-white">
                         <p><strong>50 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">
@@ -149,7 +149,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-info text-white">
                         <p><strong>60 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">
@@ -173,7 +173,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-secondary text-white">
                         <p><strong>100 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">
@@ -197,7 +197,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-success text-white">
                         <p><strong>500 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">
@@ -221,7 +221,7 @@
                     <div class="card-heading">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-danger text-white">
                         <p><strong>1000 KVA</strong></p>
                     </div>
                     <ul class="list-group text-center">

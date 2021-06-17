@@ -539,14 +539,14 @@ iframe {
   margin-bottom: 30px; }
 
 .card-pricing:hover {
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); }
 
 .card-pricing .card-heading {
   padding: 20px 10px; }
-
-.card-pricing .card-heading .fa, .card-pricing .card-heading .fas {
-  margin-top: 10px;
-  font-size: 58px; }
+  .card-pricing .card-heading .fa, .card-pricing .card-heading .fas {
+    margin-top: 10px;
+    font-size: 58px; }
 
 .card-pricing .list-group-item {
   color: #777777;
