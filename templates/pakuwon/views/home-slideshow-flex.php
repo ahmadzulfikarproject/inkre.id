@@ -36,7 +36,7 @@ $jumlah = count($headline->result_array());
         </div> -->
           <div class="col-md-6 slide-caption">
             <h2 class="mb-2 bigtitle text-white font-weight-bold text-uppercasez"><?php echo $row['judul'] ?></h2>
-            <p class="mb-5 text-white slide-caption-description d-nonez d-sm-blockz"><?php echo $row['isi_slide']; ?></p>
+            <div class="mb-5 text-white slide-caption-description d-nonez d-sm-blockz"><?php echo $row['isi_slide']; ?></div>
             <!-- <p class="slide-caption-btn text-white hidden-xs"><a href="<?php echo base_url(''); ?>" class="btn btn-whitez btn-primary btn-outline-white py-3 px-5 rounded-0 btn-2">See Details</a></p> -->
             <!-- <div class="row hidden">
             <div class="col-lg-3">
