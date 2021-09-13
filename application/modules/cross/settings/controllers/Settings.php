@@ -104,4 +104,16 @@ class Settings extends MY_AdminController
 			show_404();
 		}
 	}
+	function backup()
+	{
+		echo CI_VERSION;
+		$group = 'superadmin';
+		if ($this->ion_auth->in_group($group)) {
+			$this->model_utama->backup_db();
+			// $this->session->set_flashdata('message', 'You must be a gangsta to view this page');
+			// redirect('welcome/index');
+		} else {
+			show_404();
+		}
+	}
 }

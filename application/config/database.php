@@ -78,7 +78,7 @@ if (ENVIRONMENT == 'development') {
 		'hostname' => 'localhost',
 		'username' => 'root',
 		'password' => 'password',
-		'database' => 'sewagenset88.com',
+		'database' => 'inkre.id',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => FALSE,

@@ -432,18 +432,24 @@ class Model_utama extends CI_model{
         $backup_file = $dbname ."-". date("d-m-Y-H-i-s") . '.gz';
         // Load the DB utility class
         $this->load->dbutil();
-
-        // Backup your entire database and assign it to a variable
-        $backup = $this->dbutil->backup();
-
-        // Load the file helper and write the file to your server
-        $this->load->helper('file');
-        $path = '../backup/';
-        write_file($path.$backup_file, $backup);
-
-        // Load the download helper and send the file to your desktop
-        $this->load->helper('download');
-        force_download($backup_file, $backup);
+        $dbs = $this->dbutil->list_databases();
+        if ($this->dbutil->database_exists($dbname))
+        {
+                // some code...
+                echo $dbname;
+                // // Backup your entire database and assign it to a variable
+                $backup = $this->dbutil->backup();
+        
+                // // Load the file helper and write the file to your server
+                $this->load->helper('file');
+                $path = '../backup/';
+                write_file($path.$backup_file, $backup);
+        
+                // // Load the download helper and send the file to your desktop
+                $this->load->helper('download');
+                force_download($backup_file, $backup);
+        }
+        
 
     }
 

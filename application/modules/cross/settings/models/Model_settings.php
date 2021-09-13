@@ -92,6 +92,40 @@ class Model_settings extends CI_Model
             return FALSE;
         }
 
+        $oldlogo = setting('site_logo');
+        // echo $oldlogo;
+        $logo = $this->_uploadImage('site_logo');
+        $logo ? getnameimg('../asset/settings/' . $oldlogo, 'settings') : '';
+        $logo ? $this->db->where('name', 'site_logo')->update('settings', ['value' => $logo]) : '';
+
+        $oldfavicon = setting('site_favicon');
+        // echo $oldfavicon;
+        $favicon = $this->_uploadImage('site_favicon');
+        $favicon ? getnameimg('../asset/settings/' . $oldfavicon, 'settings') : '';
+        $favicon ? $this->db->where('name', 'site_favicon')->update('settings', ['value' => $favicon]) : '';
+        
+        $oldbg1 = setting('site_bg1');
+        $bg1 = $this->_uploadImage('site_bg1');
+        // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
+        $bg1 ? $this->db->where('name', 'site_bg1')->update('settings', ['value' => $bg1]) : '';
+        $bg1 ? getnameimg('../asset/settings/' . $oldbg1, 'settings') : '';
+
+        $oldsite_background = setting('site_background');
+        $site_background = $this->_uploadImage('site_background');
+        $logo ? getnameimg('../asset/settings/' . $oldsite_background, 'settings') : '';
+        $site_background ? $this->db->where('name', 'site_background')->update('settings', ['value' => $site_background]) : '';
+        
+        $oldsite_icon = setting('site_icon');
+        $site_icon = $this->_uploadImage('site_icon');
+        $logo ? getnameimg('../asset/settings/' . $oldsite_icon, 'settings') : '';
+        $site_icon ? $this->db->where('name', 'site_icon')->update('settings', ['value' => $site_icon]) : '';
+        
+        $oldheader = setting('site_header');
+        // echo $oldheader;
+        $header = $this->_uploadImage('site_header');
+        $header ? getnameimg('../asset/settings/' .  $oldheader, 'settings') : '';
+        $header ? $this->db->where('name', 'site_header')->update('settings', ['value' => $header]) : '';
+
         // there is, so we'll check the db for that $k
         // print_r($this->input->post());
         //logo
@@ -106,9 +140,10 @@ class Model_settings extends CI_Model
         // $logo['file_name'];
         // print_r($this->input->post());
         foreach ($this->input->post() as $k => $v) {
-            // echo $k .'</br>';
+            // echo $k . '</br>';
             // does $k exist in the db?
             // if so, update it.
+            
             if (!$this->db->where('name', $k)->update('settings', ['value' => $v])) {
 
                 // no, someone adding stuff to the
@@ -118,21 +153,7 @@ class Model_settings extends CI_Model
             // return false;
         }
 
-        $header = $this->_uploadImage('site_header');
-        $header ? $this->db->where('name', 'site_header')->update('settings', ['value' => $header]) : '';
-        // $header ? getnameimg('../asset/settings/' . setting('site_header'), 'settings') : '';
-        $logo = $this->_uploadImage('site_logo');
-        // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
-        $logo ? $this->db->where('name', 'site_logo')->update('settings', ['value' => $logo]) : '';
-        $favicon = $this->_uploadImage('site_favicon');
-        // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
-        $favicon ? $this->db->where('name', 'site_favicon')->update('settings', ['value' => $favicon]) : '';
-        $bg1 = $this->_uploadImage('site_bg1');
-        // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
-        $bg1 ? $this->db->where('name', 'site_bg1')->update('settings', ['value' => $bg1]) : '';
-        $site_background = $this->_uploadImage('site_background');
-        // $logo ? getnameimg('../asset/settings/' . setting('site_logo'), 'settings') : '';
-        $site_background ? $this->db->where('name', 'site_background')->update('settings', ['value' => $site_background]) : '';
+
 
         // something's gone wrong, fail and bail
         return false;
@@ -141,27 +162,29 @@ class Model_settings extends CI_Model
     {
         // $oldimage = setting($name);
         $config['upload_path']          = '../asset/settings/';
-        $config['allowed_types']        = 'ico|gif|jpg|png|JPG|JPEG|jpeg';
+        $config['allowed_types']        = 'ico|gif|jpg|png|JPG|JPEG|jpeg|PNG';
         // $config['file_name']            = 'logowebsite';
-        // $new_name = $name . '_' . $_FILES[$name]['name'];
+        // $config['file_name'] = $name . '_' . $_FILES[$name]['name'];
         // $config['file_name'] = $name . '_' . $_FILES[$name]['name']; //$new_name;
+        // $config['file_name'] = $name;
         $config['overwrite']            = true;
         $config['max_size']             = 30024; // 1MB
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
         $this->load->library('upload', $config);
-        $settingsku = $this->db->where('name', $name)->limit(1)->get('settings')->row();
+        // $settingsku = $this->db->where('name', $name)->limit(1)->get('settings')->row();
         if ($this->upload->do_upload($name)) {
             // getnameimg('../asset/settings/' . $oldimage, 'foto_berita');
             // getnameimg('../asset/settings/' . $settingsku->value, 'settings');
+            unset($config);
             return $this->upload->data("file_name");
         }
         // $new_name = '';
         unset($new_name);
-        unset($new_name);
+        // unset($new_name);
         unset($name);
-        unset($settingsku);
+        // unset($settingsku);
         // return "default.jpg";
     }
 
