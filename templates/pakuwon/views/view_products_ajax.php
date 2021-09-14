@@ -65,8 +65,8 @@
 							<?php $isi_products = strip_tags($post['isi_products']);
 							$isi = substr($isi_products, 0, 100);
 							$isi = substr($isi_products, 0, strrpos($isi, " "));
-							$hari = namahari($post['tgl_posting']);
-							$tanggal = tgl_indo($post['tgl_posting']);
+							$hari = namahari($post['created_time']);
+							$tanggal = tgl_indo($post['created_time']);
 							//if ($post['gambar'] == ''){ $foto = 'nophoto.jpg'; }else{ $foto = $post['gambar']; }
 							if ($post['gambar'] == '') {
 								$foto = 'nophoto.jpg';
@@ -100,7 +100,7 @@
 									</div>
 									<!--responsive-container-->
 									<h2 class="font-size-regular"><a href='<?php echo base_url() . "products/detail/" . $post['slug']; ?>'><?php echo $post['judul'] ?></a></h2>
-									<div class="meta mb-4"><?php echo namahari($post['tgl_posting']) . ', ' . tanggalindo($post['tgl_posting'], 'd M Y H:i'); ?> <span class="mx-2">&bullet;</span> <?php echo $post['username'] ?></div>
+									<div class="meta mb-4"><?php echo namahari($post['created_time']) . ', ' . tanggalindo($post['created_time'], 'd M Y H:i'); ?> <span class="mx-2">&bullet;</span> <?php echo $post['username'] ?></div>
 								</div>
 							</div>
 							<!--col-->

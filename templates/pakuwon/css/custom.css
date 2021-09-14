@@ -269,7 +269,7 @@ body .popover.top > .arrow {
 
 .modal-header {
   color: #ffffff;
-  background: #030e27 !important; }
+  background: #0277bd !important; }
 
 .highlight {
   background-color: #FFFF88; }
@@ -308,7 +308,7 @@ body a:hover {
 
 .contact-form .input-group-text {
   color: white;
-  background-color: #030E27; }
+  background-color: #0277BD; }
 
 .contact-bottom .media {
   color: white; }
@@ -383,7 +383,7 @@ table.pricing tbody tr {
   -moz-transform: scale(1); }
   @media (min-width: 768px) {
     table.pricing tbody tr:hover {
-      background-color: #071f56;
+      background-color: #0397ef;
       -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=0, Color=#000000)";
       /*IE 8*/
       -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
@@ -448,7 +448,7 @@ table.pricing tbody tr {
         border-color: #ED1C24; }
 
 .breadcrumb {
-  background-color: #f89d13;
+  background-color: #e6ed23;
   color: black; }
   .breadcrumb a {
     color: black;

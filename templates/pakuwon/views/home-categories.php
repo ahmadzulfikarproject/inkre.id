@@ -5,8 +5,9 @@
 			<div id="categories" class="panel panel-default sidefix-1 affix-top">
 				<div class="panel-heading">
 					<!-- <h3 class="panel-title hidden">Kategori <strong><?php echo $this->router->fetch_module(); ?></strong></h3> -->
-					<div class="text-left pb-1 border-primary mb-4">
-						<h2 class="text-primary">CV SARJANA MUDA TEKNIK <strong>Spesialis Waterproofing dan Injection Concrete</strong></h2>
+					<div class="text-left pb-1 border-primaryz mb-4">
+						<h3 class="text-primary"><?php echo setting('site_name')?></h3>
+						<strong><?php echo setting('site_description')?></strong>
 					</div>
 				</div>
 				<div class="panel-body">

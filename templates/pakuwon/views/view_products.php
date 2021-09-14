@@ -44,8 +44,8 @@
                         $isi_products = strip_tags($row['isi_products']); 
                         $isi = substr($isi_products,0,100); 
                         $isi = substr($isi_products,0,strrpos($isi," "));
-                        $hari = namahari($row['tgl_posting']);
-                        $tanggal = tgl_indo($row['tgl_posting']);
+                        $hari = namahari($row['created_time']);
+                        $tanggal = tgl_indo($row['created_time']);
                         if ($row['gambar'] == ''){ $foto = 'nophoto.jpg'; }else{ $foto = $row['gambar']; } ?>
 
 

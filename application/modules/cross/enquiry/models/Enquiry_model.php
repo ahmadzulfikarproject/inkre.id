@@ -1,78 +1,78 @@
 <?php
-class Enquiry_model extends CI_Model{
+class Enquiry_model extends CI_Model
+{
 
-	 function getenquiry($params = array()){
+    function getenquiry($params = array())
+    {
         $this->db->select('*');
         $this->db->from('enquiry');
         //filter data by searched keywords
-        if(!empty($params['search']['keywords'])){
-            $this->db->like('name',$params['search']['keywords']);
+        if (!empty($params['search']['keywords'])) {
+            $this->db->like('name', $params['search']['keywords']);
         }
         //sort data by ascending or desceding order
-        if(!empty($params['search']['sortBy'])){
-            $this->db->order_by('name',$params['search']['sortBy']);
-        }else{
-            $this->db->order_by('id','desc');
+        if (!empty($params['search']['sortBy'])) {
+            $this->db->order_by('name', $params['search']['sortBy']);
+        } else {
+            $this->db->order_by('id', 'desc');
         }
         //set start and limit
-        if(array_key_exists("start",$params) && array_key_exists("limit",$params)){
-            $this->db->limit($params['limit'],$params['start']);
-        }elseif(!array_key_exists("start",$params) && array_key_exists("limit",$params)){
+        if (array_key_exists("start", $params) && array_key_exists("limit", $params)) {
+            $this->db->limit($params['limit'], $params['start']);
+        } elseif (!array_key_exists("start", $params) && array_key_exists("limit", $params)) {
             $this->db->limit($params['limit']);
         }
         //get records
         $query = $this->db->get();
         //return fetched data
-        return ($query->num_rows() > 0)?$query->result_array():array();
+        return ($query->num_rows() > 0) ? $query->result_array() : array();
     }
 
-    function insert_enquiry($data){
+    function insert_enquiry($data)
+    {
         //$this->db->truncate('enquiry');
         //return $this->db->query("SELECT * FROM halamanstatis where id_halaman='$id'");
         //$this->db->insert('enquiry',$data);
         //$this->db->insert($this->table, $data);
-		if ($this->db->insert('enquiry',$data)){
+        if ($this->db->insert('enquiry', $data)) {
             //echo "berhasil";
-            if ($this->db->affected_rows())
-            {
+            if ($this->db->affected_rows()) {
                 //$this->session->set_flashdata('success', 'berhasil terkirim !');
-                if ($this->email_enquiry($data)){
-                    return TRUE;
-                }
-                else{
-                    return FALSE;
-                }
-            }
-            else
-            {
+                // if ($this->email_enquiry($data)) {
+                //     return TRUE;
+                // } else {
+                //     return FALSE;
+                // }
+                $this->send($data);
+            } else {
                 //$this->session->set_flashdata('error', 'pesan gagal terkirim !');
                 return FALSE;
             }
         }
     }
-    function email_enquiry($data){
+    function email_enquiry($data)
+    {
         // $nama           = $this->db->escape_str($data['name']);
         $emailku        = contactwebsite('email');
         $from           = $data['name'];
         $subject         = $data['subjek'];
-        $message         = $this->db->escape_str($data['name']).' - '.$data['phone']." <br><hr><br> ".$data['message'];
+        $message         = $this->db->escape_str($data['name']) . ' - ' . $data['phone'] . " <br><hr><br> " . $data['message'];
 
         //$rows = $this->model_users->users_edit($this->session->username)->row_array();
         //$iden = $this->model_identitas->identitas()->row_array();
-        $this->email->from($from, 'via website '.contactwebsite('nama'));
+        $this->email->from($from, 'via website ' . contactwebsite('nama'));
         $this->email->to($emailku);
-        $this->email->cc('');
+        $this->email->cc('ahmadzulfikarproject@gmail.com');
         $this->email->bcc('');
 
         $this->email->subject($subject);
         $this->email->message($message);
         $this->email->set_mailtype("html");
         // $this->email->send();
-        
-        if (! $this->email->send())
-        {
+
+        if (!$this->email->send()) {
             return FALSE;
-        }else{
+        } else {
             return TRUE;
         }
         $config['protocol'] = 'sendmail';
@@ -81,10 +81,39 @@ class Enquiry_model extends CI_Model{
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
         $this->email->initialize($config);
+    }
+    function send($data)
+    {
+        // $nama           = $this->db->escape_str($data['name']);
+        $emailku        = contactwebsite('email');
+        $from           = $data['email'];
+        $subject         = $data['subjek'];
+        $message         = $this->db->escape_str($data['name']) . ' - ' . $data['phone'] . " <br><hr><br> " . $data['message'];
 
+        $this->load->config('email');
+        $this->load->library('email');
+
+        // $from = $this->config->item('smtp_user');
+        $to = $emailku;
+        // $subject = $this->input->post('subject');
+        // $message = $this->input->post('message');
+
+        $this->email->set_newline("\r\n");
+        $this->email->from($from, $data['name'].'via website ' . contactwebsite('nama'));
+        $this->email->to($to);
+        $this->email->cc('ahmadzulfikarproject@gmail.com');
+        $this->email->subject($subject);
+        $this->email->message($message);
+
+        if ($this->email->send()) {
+            echo 'Your Email has successfully been sent.';
+        } else {
+            show_error($this->email->print_debugger());
+        }
     }
     //import data xls
-    function importdata(){
+    function importdata()
+    {
         $config['upload_path'] = '../asset/upload/';
         $config['allowed_types'] = 'xls|xlsx';
         $config['max_size'] = '3000'; // kb
@@ -103,29 +132,27 @@ class Enquiry_model extends CI_Model{
         $this->load->library('slug', $config);
         // create the slug
         //$datadb['url_title'] = $this->slug->create_uri($post_data['title']);
-        
+
         if (!$this->upload->do_upload('filexl')) {
             $error = array('error' => $this->upload->display_errors());
             echo $error['error'];
-        }
-        else{
+        } else {
             $media = $this->upload->data();
-            $inputFileName = '../asset/upload/'.$media['file_name'];
+            $inputFileName = '../asset/upload/' . $media['file_name'];
 
             try {
                 $inputFileType = IOFactory::identify($inputFileName);
                 $objReader = IOFactory::createReader($inputFileType);
                 $objPHPExcel = $objReader->load($inputFileName);
-            }
-            catch(Exception $e) {
-                die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+            } catch (Exception $e) {
+                die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
             }
             $sheet = $objPHPExcel->getSheet(0);
             $highestRow = $sheet->getHighestRow();
             $highestColumn = $sheet->getHighestColumn();
 
-            for ($row = 4; $row <= $highestRow; $row++){  
-                $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,NULL,TRUE,FALSE);
+            for ($row = 4; $row <= $highestRow; $row++) {
+                $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
                 $data = array(
                     //"No"=> $rowData[0][0],
                     "name"      => $rowData[0][1],
@@ -135,17 +162,18 @@ class Enquiry_model extends CI_Model{
                     "message"   => $rowData[0][5],
                     "date"      => \PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][6], 'DD/MM/YYYY'),
                 );
-                $this->db->insert("enquiry",$data);
-            } 
-            $this->session->set_flashdata('sukses','Berhasil upload ...!!'); 
+                $this->db->insert("enquiry", $data);
+            }
+            $this->session->set_flashdata('sukses', 'Berhasil upload ...!!');
             echo "berahasil";
             //redirect('data');
             //=======
 
         }
     }
-    function importdataajax($file){
- 
+    function importdataajax($file)
+    {
+
         $config['upload_path'] = '../asset/upload/';
         $config['allowed_types'] = 'xls|xlsx';
         $config['max_size'] = '3000'; // kb
@@ -212,11 +240,10 @@ class Enquiry_model extends CI_Model{
 
         }
         */
-        
-        
     }
-    function upload_data(){
- 
+    function upload_data()
+    {
+
         $config['upload_path'] = '../asset/upload/';
         $config['allowed_types'] = 'xls|xlsx';
         $config['max_size'] = '3000'; // kb
@@ -236,31 +263,29 @@ class Enquiry_model extends CI_Model{
         // create the slug
         //$datadb['url_title'] = $this->slug->create_uri($post_data['title']);
         $this->upload->do_upload('file');
-        
+
         if (!$this->upload->do_upload('file')) {
             $error = array('error' => $this->upload->display_errors());
             //echo $error['error'];
             $data['error'] = TRUE;
-            echo json_encode($data); 
-        }
-        else{
+            echo json_encode($data);
+        } else {
             $media = $this->upload->data();
-            $inputFileName = '../asset/upload/'.$media['file_name'];
+            $inputFileName = '../asset/upload/' . $media['file_name'];
 
             try {
                 $inputFileType = IOFactory::identify($inputFileName);
                 $objReader = IOFactory::createReader($inputFileType);
                 $objPHPExcel = $objReader->load($inputFileName);
-            }
-            catch(Exception $e) {
-                die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+            } catch (Exception $e) {
+                die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
             }
             $sheet = $objPHPExcel->getSheet(0);
             $highestRow = $sheet->getHighestRow();
             $highestColumn = $sheet->getHighestColumn();
 
-            for ($row = 4; $row <= $highestRow; $row++){  
-                $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,NULL,TRUE,FALSE);
+            for ($row = 4; $row <= $highestRow; $row++) {
+                $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
                 $data = array(
                     //"No"=> $rowData[0][0],
                     "name"      => $rowData[0][1],
@@ -270,20 +295,16 @@ class Enquiry_model extends CI_Model{
                     "message"   => $rowData[0][5],
                     "date"      => \PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][6], 'DD/MM/YYYY'),
                 );
-                if ($this->db->insert("enquiry",$data)) {
+                if ($this->db->insert("enquiry", $data)) {
                     # code...
                     $data['error'] = FALSE;
                 }
-            } 
-            echo json_encode($data); 
+            }
+            echo json_encode($data);
             //echo "berahasil";
             //redirect('data');
             //=======
 
         }
-        
-        
-        
     }
-
 }

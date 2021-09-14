@@ -35,8 +35,8 @@
                         $isi_products = strip_tags($row['isi_products']);
                         $isi = substr($isi_products, 0, 100);
                         $isi = substr($isi_products, 0, strrpos($isi, " "));
-                        $tanggal = tgl_indo($row['tgl_posting']);
-                        $hari = namahari($row['tgl_posting']);
+                        $tanggal = tgl_indo($row['created_time']);
+                        $hari = namahari($row['created_time']);
                         //if ($row['gambar'] == ''){ $foto = 'nophoto.jpg'; }else{ $foto = $row['gambar']; }
                         if ($row['gambar'] == '') {
                             $foto = 'nophoto.jpg';
@@ -62,7 +62,7 @@
 
                             <div class="responsive-container kotak-item schfx" itemscope>
 
-                                <div class="dummy50"></div>
+                                <div class="dummy80"></div>
                                 <a href="<?php echo base_url() . "products/detail/" . $row['slug']; ?>" class="img-container" style="background-image: url('<?php echo base_url() . "asset/foto_products/" . $foto; ?>');">
                                     <div class="centerer"></div>
                                     <img alt="<?php echo $row['judul'] ?>" class='img-thumbnailz hidden' src='<?php echo base_url() . "asset/foto_products/" . $foto; ?>' class='img-responsive'>
@@ -76,8 +76,8 @@
 
 
                             </div>
-                            <div class="kotak-item-captionz">
-                                <h3 class="carousel-caption-headerz"><a href='<?php echo base_url() . "products/detail/" . $row['slug']; ?>'><?php echo $row['judul'] ?></a></h3>
+                            <div class="kotak-item-caption">
+                                <h3 class="carousel-caption-headerz pb-2 pt-2"><a href='<?php echo base_url() . "products/detail/" . $row['slug']; ?>'><?php echo $row['judul'] ?></a></h3>
                             </div>
 
                         </div>

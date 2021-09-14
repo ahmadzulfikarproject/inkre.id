@@ -11,8 +11,9 @@
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
 
 
-                <h1 class="text-white bigtitle mb-0 text-uppercase font-weight-bold">CV. Rehils Putra Mandiri</h1>
-                <h2 class="text-white mb-5 text-uppercase font-weight-light">Sewa Genset Berpengalaman Pelayanan 24 Jam Non Stop</h2>
+                <h3 class="text-white bigtitle mb-0 font-weight-light">PT Inter Nusa Kreasindo</h3>
+                <h4 class="text-white mb-5 font-weight-light">General Contractor and Fabricator tiang lampu PJU dan lampu PJU solar panel dan battery</h4>
+                <p class="text-white mb-5 font-weight-light">Kami Menyediakan jasa Konstruksi untuk Masalah yang Kompleks & menyediakan produk tiang lampu PJU dan lampu PJU solar panel dan battery. Hubungi kami hari ini untuk layanan terbaik.</p>
                 <p><a href="<?php echo base_url('contact/detail/' . Globals::idContact()->slug) ?>" class="btn btn-primary rounded shadow py-3 px-5 text-white">Hubungi Kami!</a></p>
 
             </div>

@@ -4,7 +4,7 @@ $isi = substr($isi_berita, 0, 120);
 $isi = substr($isi_berita, 0, strrpos($isi, " "));
 //$tgl1 = tgl_indoo($record['tgl_mulai']);
 //$tgl2 = tgl_indoo($record['tgl_selesai']);
-//$tgl_posting = tgl_indoo($record['tanggal']);
+//$created_time = tgl_indoo($record['tanggal']);
 
 ?>
 <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>);" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -21,7 +21,7 @@ $isi = substr($isi_berita, 0, strrpos($isi, " "));
 <section id="page" class="images_gallery site-section">
     <?php if ($record['gambar'] != '') : ?>
         <div class="pageheader" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>);" data-aos="fade" data-aos-easing="ease-in-sine" data-aos-duration="500">
-            <a class="photobox_a" href="<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>">
+            <a class="photobox_az" href="<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>">
                 <img alt="<?php echo $record['judul'] ?>" class='products-img thumbnail hidden' width='100%' src='<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>'>
             </a>
             <div class="container">
@@ -40,7 +40,7 @@ $isi = substr($isi_berita, 0, strrpos($isi, " "));
     <div class="container">
         <div class="row">
             <?php
-            //$tanggal = tgl_indo($record['tgl_posting']);
+            //$tanggal = tgl_indo($record['created_time']);
             //echo "<div class='col-md-12'><p class='sidebar-title'><span class='glyphicon glyphicon-volume-up'></span> $record[judul]</p></div><hr>
             ?>
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
@@ -50,14 +50,14 @@ $isi = substr($isi_berita, 0, strrpos($isi, " "));
             <div class='col-xs-12 col-sm-9 col-md-9 col-lg-9'>
                 <div class="kontenpage hero" itemscope>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hiddenz">
                             <?php if ($record['gambar'] != '') : ?>
-                                <div class="images_galleryz">
+                                <div class="images_galleryz mb-5">
 
-                                    <a class="photobox_az" href="<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>" data-toggle="tooltip" title="View image <?php echo $record['judul'] ?>">
-                                        <img alt="<?php echo $record['judul'] ?>" class='products-img thumbnail hidden' width='100%' src='<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>'>
+                                    <a class="photobox_a" href="<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>" data-toggle="tooltip" title="View image <?php echo $record['judul'] ?>">
+                                        <img alt="<?php echo $record['judul'] ?>" class='products-img thumbnail hiddenz' width='100%' src='<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>'>
                                     </a>
-                                    <span><?php echo $record['judul'] ?></span>
+                                    <!-- <span><?php echo $record['judul'] ?></span> -->
                                 </div>
                             <?php endif; ?>
                         </div>

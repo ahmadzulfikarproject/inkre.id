@@ -34,7 +34,7 @@
 			}
 		</style>
 		<div class="container">
-		    <h1>Import Data Products</h1>
+		    <h1>Import Data Berita</h1>
 		    <div class="row"> 
 		        <div class="post-list col-xs-12" id="enquiryList">
 		        	<div id="results" class="alert alert-success" style="display: none;"></div>
@@ -60,7 +60,7 @@
 				                <button class="btn btn-primary btn-lg scrollup" type="submit" name="submit" id="importajax" value="Submit">
 		                            <i class="fas fa-file-import"></i> <span>Import Ajax</span>
 		                        </button>
-		                        <a href="<?php echo base_url('products'); ?>" class="btn btn-info btn-lg">Back</a>
+		                        <a href="<?php echo base_url('news'); ?>" class="btn btn-info btn-lg">Back</a>
 		                    </label>
 		                </div>
 		            </form>
@@ -96,7 +96,7 @@
 			    	var form_data = $ji('#submit').serialize();
 			    	$ji( "#results" ).text(form_data);
 			         $.ajax({
-			             url:'<?php echo base_url();?>products/do_upload',
+			             url:'<?php echo base_url();?>news/do_upload',
 			             type:"post",
 			             data:new FormData(this),
 			             processData:false,
@@ -113,9 +113,7 @@
 	                            $ji('#importajax span').text('Submitting...');
 	                            $ji('.loading').show();
 	                        },
-	                        success:function(data, textStatus, jqXHR){
-	                        	
-
+	                        success:function(data){
 	                            if(data.error == true ){
 	                                $ji('#importajax').attr("disabled", false);
 	                                $ji('.loading').fadeOut( "slow", function() {
@@ -161,7 +159,7 @@
 
 
 	                            }
-	                            //$('#result').html(data);
+	                            $('#result').html(data);
 				                //alert('Load was performed. Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information! ');
 				                console.log('jqXHR:');
 				                console.log(jqXHR);
@@ -169,7 +167,6 @@
 				                console.log(textStatus);
 				                console.log('data:');
 				                console.log(data);
-
 	                            
 
 	                        },

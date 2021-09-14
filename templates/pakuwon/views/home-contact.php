@@ -6,11 +6,14 @@ $row = $this->db->query("SELECT nama_website FROM identitas")->row_array();
 $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_array();
 //print_r($contacts);
 ?>
-<div class="row align-items-center justify-content-center d-flex">
-	<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 py-12"><img class="shadow bg-white rounded" src="<?php echo base_url("asset/foto_contact/" . $contacts['gambar']); ?>" alt=""></div> -->
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" data-aos="zoom-in-up" data-aos-once="true">
+<div class="row align-items-top justify-content-center d-flex">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 py-12">
+		<!-- <img class="shadow bg-white rounded" src="<?php echo base_url("asset/foto_contact/" . $contacts['gambar']); ?>" alt=""> -->
+		<a href="<?php echo base_url(); ?>" class="text-white h2 mb-0"><img src="<?php echo home_url() . 'asset/settings/' . setting('site_logo'); ?>"></a>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" data-aos="zoom-in-up" data-aos-once="true">
 		<div class="contact-bottom">
-			<h2 class="mb-4"><strong>Contact</strong> Us</h2>
+			<h2 class="mb-4">Contact Us</h2>
 			<!-- <h5 class="mb-3"><?php echo $contacts['nama']; ?></h5> -->
 			<ul class="list-unstyled">
 				<?php if (!empty($contacts['alamat'])) : ?>
@@ -49,7 +52,7 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 						<!-- <img data-src="holder.js/60x60?theme=dark" class="mr-3" src="..." alt="Generic placeholder image"> -->
 						<div class="media-body">
 							<!-- <h5 class="mt-0 mb-1">Chat dengan kami !</h5> -->
-							<?php listitem($contacts['wa'],'wa'); ?>
+							<?php listitem($contacts['wa'], 'wa'); ?>
 						</div>
 					</li>
 				<?php endif; ?>
@@ -69,7 +72,7 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 						<!-- <img data-src="holder.js/60x60?theme=dark" class="mr-3" src="..." alt="Generic placeholder image"> -->
 						<div class="media-body">
 							<!-- <h5 class="mt-0 mb-1">Hubungi Kami Sekarang !</h5> -->
-							<?php listitem($contacts['email'],'email'); ?>
+							<?php listitem($contacts['email'], 'email'); ?>
 						</div>
 					</li>
 				<?php endif; ?>
@@ -79,7 +82,7 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 						<!-- <img data-src="holder.js/60x60?theme=dark" class="mr-3" src="..." alt="Generic placeholder image"> -->
 						<div class="media-body">
 							<!-- <h5 class="mt-0 mb-1">Hubungi Kami Sekarang !</h5> -->
-							<?php listitem($contacts['ig'],'link'); ?>
+							<?php listitem($contacts['ig'], 'link'); ?>
 						</div>
 					</li>
 				<?php endif; ?>
@@ -89,6 +92,14 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 		</div>
 	</div>
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" data-aos="zoom-in-up" data-aos-once="true">
+		<h2 class="mb-4">Hubungi Kami</h2>
+		<!-- <p class="mb-0">Hubungi Kami.</p> -->
+		<a target='_blank' href="tel:<?= Globals::idContact()->mobile ?>" class="btn btn-danger mb-4 font-weight-bold text-uppercase"><i class="icon icon-phone align-self-center mr-3 d-blockz d-sm-none" style="margin:0 10px 0 0"></i> <?= Globals::idContact()->mobile ?></a>
+		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+			Kirim Permintaan
+		</button>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2" data-aos="zoom-in-up" data-aos-once="true">
 		<div id="follow-us">
 			<h2 class="mb-4">Follow us</h2>
 			<h2>

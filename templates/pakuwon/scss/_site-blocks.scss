@@ -508,7 +508,7 @@
 			// min-height: 600px;
 			// height: calc(100vh);
 			height: 40vw;
-			background-color: lighten($primary, 10%);
+			// background-color: lighten($primary, 10%);
 
 			@include media-breakpoint-down(sm) {
 				text-align: center;
@@ -1207,10 +1207,11 @@
 
 .border-primary {
 	position: relative;
+	padding-bottom: 20px;
 
 	h2 {
-		text-transform: uppercase;
-		// font-weight: 700 !important;
+		// text-transform: uppercase;
+		font-weight: 700 !important;
 	}
 
 	&:after {
@@ -1561,7 +1562,18 @@
 	@include media-breakpoint-down(md) {
 		margin-bottom: 30px;
 	}
-
+	&::before {
+		content: "";
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		bottom: 0;
+		left: 10px;
+		border-radius: 10px;
+		box-shadow: var(--box-shadow-normal),0 0 0 transparent;
+		transition: all .25s cubic-bezier(.02,.01,.47,1);
+		z-index: -1;
+	}
 	&:after {
 		content: '';
 		position: absolute;

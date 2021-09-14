@@ -37,13 +37,13 @@
               </a>
               <div class="responsive-container border border-0 mb-0 imgz d-flex justify-content-center align-items-center" >
                 <div class="dummy80"></div>
-                <div class="img-container" style="background-image: url(<?php echo base_url()."asset/foto_services/".$foto ;?>);">
+                <a href="<?php echo base_url()."services/detail/".$row['slug']; ?>" class="img-container" style="background-image: url(<?php echo base_url()."asset/foto_services/".$foto ;?>);">
                   <div class="centerer"></div>
                   <img alt="<?php echo $row['judul'] ?>" class='img-thumbnail hidden' src='<?php echo base_url()."asset/foto_services/".$foto ;?>' class='img-responsive'>
                   <a href="<?php echo base_url()."services/detail/".$row['slug']; ?>"></a>
-                </div><!--img-container-->
+                </a><!--img-container-->
                 <div class="icon d-flex justify-content-center align-items-center">
-                  <span class="icon-search2"></span>
+                  <a href="<?php echo base_url()."services/detail/".$row['slug']; ?>" class="icon-search2"></a>
                 </div>
               </div>
               <div class="text p-3 bg-primary text-primary border border-0 hidden">

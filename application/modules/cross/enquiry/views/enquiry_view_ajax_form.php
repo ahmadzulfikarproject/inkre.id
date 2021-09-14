@@ -77,6 +77,10 @@ ob_start();
   //jQuery.noConflict();
   //alert('kirim emaillllllllllll !!!!!!!!!!1');
   // var jq = $.noConflict();
+  function reload() {
+    // alert("Page is loaded");
+    $("#reload-captcha").trigger('click');
+  }
   $(document).ready(function() {
     //ajax input
     /*i
@@ -90,7 +94,7 @@ ob_start();
     //alert('test');
     */
     $(".reload-captcha").click(function() {
-      //alert('test');
+      // alert('test');
       /*
       $.get("<?php
               ?>", function(data, status){
@@ -195,7 +199,7 @@ ob_start();
           error: function(jqXHR, textStatus, errorThrown) {
             //alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
 
-            $('#result').html('<p>status code: ' + jqXHR.status + '</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>' + jqXHR.responseText + '</div>');
+            // $('#result').html('<p>status code: ' + jqXHR.status + '</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>' + jqXHR.responseText + '</div>');
             // console.log('jqXHR:');
             // console.log(jqXHR);
             // console.log('textStatus:');

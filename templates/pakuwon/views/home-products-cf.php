@@ -34,15 +34,15 @@
                 </div>
               </a>
               <div class="responsive-container imgz d-flex justify-content-center align-items-center" >
-                <div class="dummy"></div>
-                <div class="img-container" style="background-image: url(<?php echo base_url()."asset/foto_products/".$foto ;?>);">
+                <div class="dummy80"></div>
+                <a href="<?php echo base_url()."products/detail/".$row['slug']; ?>" class="img-container" style="background-image: url(<?php echo base_url()."asset/foto_products/".$foto ;?>);">
                   <div class="centerer"></div>
                   <img alt="<?php echo $row['judul'] ?>" class='img-thumbnail hidden' src='<?php echo base_url()."asset/foto_products/".$foto ;?>' class='img-responsive'>
                   <a href="<?php echo base_url()."products/detail/".$row['slug']; ?>"></a>
-                </div><!--img-container-->
-                <div class="icon d-flex justify-content-center align-items-center">
+                </a><!--img-container-->
+                <a href="<?php echo base_url()."products/detail/".$row['slug']; ?>" class="icon d-flex justify-content-center align-items-center">
                   <span class="icon-search2"></span>
-                </div>
+                </a>
               </div>
               <div class="text p-3">
                 <span class="status sale">Sale</span>
@@ -51,8 +51,8 @@
                     <h3><a href="<?php echo base_url()."products/detail/".$row['slug']; ?>"><?php echo $row['judul'] ?></a></h3>
                     <p><?php echo $isi; ?></p>
                   </div>
-                  <div class="two">
-                    <span class="price">$20,000</span>
+                  <div class="two hidden">
+                    <span class="price"></span>
                   </div>
                 </div>
               </div>
