@@ -960,8 +960,8 @@ h1, h2, h3, h4, h5,
       .slide-one-item.home-slider,
       .slide-one-item.home-slider .row {
         text-align: center;
-        height: auto;
-        padding: 50px 20px; } }
+        height: 100vh !important;
+        padding: 0px 0px; } }
   .slide-one-item.home-slider .owl-nav {
     position: absolute !important;
     top: 50% !important;

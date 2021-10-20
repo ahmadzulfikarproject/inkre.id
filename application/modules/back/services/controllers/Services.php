@@ -57,6 +57,7 @@ class services extends MY_AdminController
 
 		$this->template->title = $this->router->fetch_class();
 		$this->ion_auth->in_group('superadmin') ? $this->template->button->add('<a href="#resetModal" class="btn btn-primary" data-toggle="modal">Reset services DB</a>') : '';
+		$this->ion_auth->in_group('superadmin') ? $this->template->button->add('<a href="#updateModal" class="btn btn-primary" data-toggle="modal">Update DB</a>') : '';
 		$this->template->button->add('<a class="btn btn-primary" href="' . base_url('services/add_services') . '">Tambahkan Data</a>');
 		$data['button'] = $this->template->button;
 		$this->template->button_action->add('<a class="btn btn-primary" href="#">Cancel</a>');
@@ -72,9 +73,11 @@ class services extends MY_AdminController
 		$data = array();
 		$no = $_POST['start'];
 		foreach ($list as $services) {
+			$status = $services->status == '1' ? 'checked' : '';
 			$action = anchor(base_url('services/edit_services/' . $services->id_services), 'Edit <span class="glyphicon glyphicon-edit"></span>', array('class' => 'btn btn-primary btn-sm', 'title' => $services->judul));
 			$action .= anchor(home_url('services/detail/' . $services->slug), 'View', array('class' => 'btn btn-success btn-sm', 'target' => '_blank', 'title' => $services->judul));
 			$action .= anchor(base_url('services/delete_services/' . $services->id_services), 'Delete <span class="glyphicon glyphicon-remove"></span>', array('onclick' => 'return confirm(\'Apa anda yakin untuk hapus Data ini?\')', 'class' => 'btn btn-danger btn-sm', 'title' => $services->judul));
+			// $action .= '<input type="checkbox" name="status" class="js-switch" '.$status.'/>';
 			$no++;
 			$row = array();
 			$row[] = $no;
@@ -240,6 +243,14 @@ class services extends MY_AdminController
 	{
 		if ($this->input->is_ajax_request()) {
 			$this->services->reset_db_services();
+		} else {
+			show_404();
+		}
+	}
+	function update_services()
+	{
+		if ($this->input->is_ajax_request()) {
+			$this->services->update_db_services();
 		} else {
 			show_404();
 		}

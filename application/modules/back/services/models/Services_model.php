@@ -5,7 +5,7 @@ class Services_model extends CI_Model
 {
 
     var $table = 'services';
-    var $column_order = array(null,null, 'judul', 'cat_name','services_views','created_time',null); //set column field database for datatable orderable
+    var $column_order = array(null, null, 'judul', 'cat_name', 'services_views', 'created_time', null); //set column field database for datatable orderable
     var $column_search = array('judul', 'id_categories'); //set column field database for datatable searchable 
     var $order = array('id_services' => 'desc'); // default order 
     var $hasil = array();
@@ -17,6 +17,7 @@ class Services_model extends CI_Model
     {
         parent::__construct();
         $this->load->database();
+        $this->load->dbforge();
     }
 
     private function _get_datatables_query()
@@ -234,35 +235,7 @@ class Services_model extends CI_Model
             //$slugku = $page->slug;
             $this->new_slug = true;
         }
-        // if ($_FILES["c"]['name'] == '') {
-        //     $imgupdate = false;
-        //     $datadb = array(
-        //         'judul' => $this->db->escape_str($this->input->post('a')),
-        //         //'slug'=> $this->slug->create_uri($this->input->post('a')),
-        //         //'slug'=> $slugku,
-        //         'isi_services' => $this->input->post('b'),
-        //         'meta_title' => $this->input->post('meta_title'),
-        //         'meta_keywords' => $this->input->post('meta_keywords'),
-        //         'meta_description' => $this->input->post('meta_description'),
-        //         'created_time' => date('Y-m-d H:i:s')
-        //     );
-        // } else {
-        //     $imgupdate = true;
-        //     $datadb = array(
-        //         'judul' => $this->db->escape_str($this->input->post('a')),
-        //         //'slug'=> $this->slug->create_uri($this->input->post('a')),
-        //         //'slug'=> $slugku,
-        //         'isi_services' => $this->input->post('b'),
-        //         'meta_title' => $this->input->post('meta_title'),
-        //         'meta_keywords' => $this->input->post('meta_keywords'),
-        //         'meta_description' => $this->input->post('meta_description'),
-        //         'created_time' => date('Y-m-d H:i:s'),
-        //         'gambar' => $hasil['file_name']
-        //     );
-        //     //$page = $this->db->where('id_services', $this->input->post('id'))->limit(1)->get($this->table)->row();
-        //     //unlink('../asset/foto_services/'.$page->gambar);
-        //     getnameimg('../asset/foto_services/' . $page->gambar, 'foto_services');
-        // }
+        
         $datadb = array(
             'judul' => $this->db->escape_str($this->input->post('a')),
             // 'slug' => $this->slug->create_uri($this->input->post('a')),
@@ -271,7 +244,9 @@ class Services_model extends CI_Model
             'meta_title' => $this->input->post('meta_title'),
             'meta_keywords' => $this->input->post('meta_keywords'),
             'meta_description' => $this->input->post('meta_description'),
-            'created_time' => date('Y-m-d H:i:s')
+            'created_time' => date('Y-m-d H:i:s'),
+            'status' => $this->input->post('status') == 'on' ? '1' : '0'
+
         );
         $this->hasil ? $datadb['gambar'] = $this->hasil['file_name'] : '';
         $this->new_slug ? $datadb['slug'] = $this->slug->create_uri($this->input->post('a')) : '';
@@ -343,6 +318,16 @@ class Services_model extends CI_Model
                 //}
 
             }
+        }
+    }
+    function update_db_services()
+    {
+        if (!$this->db->field_exists('status', $this->table)){
+
+            $fields = array(
+                'status' => array('type' => 'INT','default' => '1')
+            );
+            $this->dbforge->add_column($this->table, $fields);
         }
     }
 }

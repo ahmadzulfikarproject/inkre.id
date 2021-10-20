@@ -9,7 +9,7 @@
     </div>
   </div>
 </div>
-<section id="page" class="clients_categories site-section">
+<section id="page" class="clients_categories">
     <div class="container" data-aos="fade-up" data-aos-once="true">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

@@ -9,7 +9,7 @@
         </div>
     </div>
 </div>
-<section id="page" class="products_categories site-section">
+<section id="page" class="products_categories pt-4">
     <div class="container">
         <div class="row">
 

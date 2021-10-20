@@ -43,7 +43,8 @@ class Enquiry_model extends CI_Model
                 // } else {
                 //     return FALSE;
                 // }
-                $this->send($data);
+                // $this->send($data); //kirim email
+                return TRUE;
             } else {
                 //$this->session->set_flashdata('error', 'pesan gagal terkirim !');
                 return FALSE;

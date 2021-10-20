@@ -512,9 +512,9 @@
 
 			@include media-breakpoint-down(sm) {
 				text-align: center;
-				height: auto;
+				height: 100vh !important;
 				// background: rgba($black, .8);
-				padding: 50px 20px;
+				padding: 0px 0px;
 			}
 		}
 

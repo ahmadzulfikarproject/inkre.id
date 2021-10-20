@@ -1,4 +1,4 @@
-<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(<?php echo home_url().'asset/settings/'.setting('site_header'); ?>);" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(<?php echo home_url() . 'asset/settings/' . setting('site_header'); ?>);" data-aos="fade" data-stellar-background-ratio="0.5">
 	<div class="container">
 		<div class="row align-items-center justify-content-center text-center">
 
@@ -113,10 +113,13 @@
 								<div style='clear:both'></div>
 							<?php endif; ?>
 
-							<?php $no++;
+						<?php $no++;
 						endforeach;
 					else : ?>
-						<p>Post(s) not available.</p>
+						<div class="col">
+
+							<p>Post(s) not available.</p>
+						</div>
 					<?php endif; ?>
 					<div style='clear:both'></div>
 				</div>

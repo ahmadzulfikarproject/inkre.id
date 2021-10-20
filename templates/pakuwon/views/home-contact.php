@@ -7,11 +7,11 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 //print_r($contacts);
 ?>
 <div class="row align-items-top justify-content-center d-flex">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 py-12">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 py-12 mb-4">
 		<!-- <img class="shadow bg-white rounded" src="<?php echo base_url("asset/foto_contact/" . $contacts['gambar']); ?>" alt=""> -->
-		<a href="<?php echo base_url(); ?>" class="text-white h2 mb-0"><img src="<?php echo home_url() . 'asset/settings/' . setting('site_logo'); ?>"></a>
+		<a href="<?php echo base_url(); ?>" class="text-white h2"><img src="<?php echo home_url() . 'asset/settings/' . setting('site_logo'); ?>"></a>
 	</div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" data-aos="zoom-in-up" data-aos-once="true">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 mb-4" data-aos="zoom-in-up" data-aos-once="true">
 		<div class="contact-bottom">
 			<h2 class="mb-4">Contact Us</h2>
 			<!-- <h5 class="mb-3"><?php echo $contacts['nama']; ?></h5> -->
@@ -91,7 +91,7 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 			?>
 		</div>
 	</div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" data-aos="zoom-in-up" data-aos-once="true">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 mb-4" data-aos="zoom-in-up" data-aos-once="true">
 		<h2 class="mb-4">Hubungi Kami</h2>
 		<!-- <p class="mb-0">Hubungi Kami.</p> -->
 		<a target='_blank' href="tel:<?= Globals::idContact()->mobile ?>" class="btn btn-danger mb-4 font-weight-bold text-uppercase"><i class="icon icon-phone align-self-center mr-3 d-blockz d-sm-none" style="margin:0 10px 0 0"></i> <?= Globals::idContact()->mobile ?></a>
@@ -99,12 +99,12 @@ $contacts = $this->db->query("SELECT * FROM contact where id_contact=1")->row_ar
 			Kirim Permintaan
 		</button>
 	</div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2" data-aos="zoom-in-up" data-aos-once="true">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-2 mb-4" data-aos="zoom-in-up" data-aos-once="true">
 		<div id="follow-us">
 			<h2 class="mb-4">Follow us</h2>
 			<h2>
 
-				<a target="_blank" href="https://api.whatsapp.com/send?phone=<?= $contacts['wa'] ?>"><i class="fab fa-whatsapp"></i></a>
+				<a target="_blank" href="https://api.whatsapp.com/send?phone=<?= $contacts['wa'] ?>&text=Hai%20!%20inkre.id"><i class="fab fa-whatsapp"></i></a>
 				<a target="_blank" href="<?= $contacts['fb'] ?>"><i class="fab fa-facebook"></i></a>
 				<!-- <a target="_blank" href="<?= $contacts['twitter'] ?>"><i class="fab fa-twitter-square"></i></a> -->
 				<a target="_blank" href="<?= $contacts['gplus'] ?>"><i class="fab fa-youtube"></i></a>

@@ -164,7 +164,7 @@
                       <ul class="list-unstyled nolist">
                         <?php foreach ($wa as $key => $value) {
                           //echo '<li>' . $value . '</li>';
-                          echo '<li><a href="https://api.whatsapp.com/send?phone=62' . $value . '&text=Hai%20!%20Saya%20tertarik%20untuk%20sewa%20genset%20di%20sewagenset88.com" class="font-weight-bold" target="_blank" data-aos="fade-up">
+                          echo '<li><a href="https://api.whatsapp.com/send?phone=62' . $value . '&text=Hai%20!%20inkre.id" class="font-weight-bold" target="_blank" data-aos="fade-up">
     <i class="fa fa-whatsapp"></i> ' . $value . '</a></li>';
                           # code...
                         } ?>
@@ -192,7 +192,7 @@
     </div>
   </div>
 </section>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9435.63349384861!2d106.97290952891974!3d-6.104398003045216!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a2129b9fcbfd1%3A0x12439b1f325d58c!2sCV.%20Rehils%20Putra%20Mandiri!5e0!3m2!1sid!2sid!4v1622647403328!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4092317243667!2d106.82993840076183!3d-6.469733128954793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c10071e8daa5%3A0xdb7ebeea914c5657!2sPT.%20Inter%20Nusa%20Kreasindo!5e0!3m2!1sid!2sid!4v1631628771760!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 <div id="contactModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">

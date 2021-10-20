@@ -288,6 +288,46 @@ ob_start();
       });
       //}
     });
+    $("#update-db").click(function() {
+      //var id = $(this).parents("tr").attr("id");
+
+
+      //if(confirm('Are you sure to remove this record ?'))
+      //{
+      $.ajax({
+        url: '<?php echo base_url("services/update_services/"); ?>',
+        type: 'POST',
+        beforeSend: function() {
+          //$('#enquiryList').hide();
+          //$('#enquiryList').slideUp('slow');
+          //$('#enquiryList table tbody').fadeOut("fast");
+          //$('#enquiryList table tbody').css({'filter':'alpha(opacity=0)', 'zoom':'1', 'opacity':'0'});
+          //$('#loadoverlay').show();
+          //$('#enquiryList').html(html).hide().fadeOut();
+
+          $('.loading').show();
+        },
+        error: function() {
+          alert('Something is wrong');
+        },
+        success: function(data) {
+          //$("#"+id).remove();
+
+          $('.loading').fadeOut("fast", function() {
+            table.ajax.reload(); //just reload table
+            // searchFilter();
+            // Animation complete.
+            //$('#enquiryList').html(html);
+            //$('#enquiryList table tbody').hide().fadeIn();
+            //$('#loadoverlay').fadeOut("fast");
+            //$('#enquiryList table tbody').fadeIn('fast');
+            //$('#enquiryList table tbody').css({'filter':'alpha(opacity=100)', 'zoom':'1', 'opacity':'1'});
+          });
+          // alert("Record removed successfully");
+        }
+      });
+      //}
+    });
     //enter keyboard
     $(document).on("keypress", ".form-group:has(input:input, span.input-group-btn:has(button#btn-filter)) input:input", function(e) {
       if (event.keyCode === 13) {
@@ -327,6 +367,24 @@ ob_start();
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <button id="reset-db" type="button" class="btn btn-primary" data-dismiss="modal">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="updateModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to save changes you made to document before closing?</p>
+        <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="update-db" type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
       </div>
     </div>
   </div>

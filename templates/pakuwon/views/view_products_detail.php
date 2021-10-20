@@ -18,9 +18,9 @@ $isi = substr($isi_berita, 0, strrpos($isi, " "));
         </div>
     </div>
 </div>
-<section id="page" class="images_gallery site-section">
+<section id="page" class="images_gallery pt-4">
     <?php if ($record['gambar'] != '') : ?>
-        <div class="pageheader" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>);" data-aos="fade" data-aos-easing="ease-in-sine" data-aos-duration="500">
+        <div class="pageheader hidden" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>);" data-aos="fade" data-aos-easing="ease-in-sine" data-aos-duration="500">
             <a class="photobox_az" href="<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>">
                 <img alt="<?php echo $record['judul'] ?>" class='products-img thumbnail hidden' width='100%' src='<?php echo base_url() . "asset/foto_products/" . $record['gambar'] ?>'>
             </a>

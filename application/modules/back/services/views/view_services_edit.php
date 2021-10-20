@@ -122,6 +122,18 @@
                   </div>
                 </div>
               </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Publish</label>
+                <div class="col-sm-10">
+
+                  <div class="checkbox">
+                    <label class="">
+                      <input type="checkbox" name="status" class="js-switch" <?= $rows['status'] == '1' ? 'checked' : '';?>/>
+                     
+                    </label>
+                  </div>
+                </div>
+              </div>
               <hr>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="seo-tab">

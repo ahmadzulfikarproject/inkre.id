@@ -10,7 +10,7 @@
 	</div>
 </div>
 <section class="site-section">
-	<div class="container site-section">
+	<div class="container">
 		<div class="text-left pb-1 border-primary mb-4">
 			<h2 class="text-primary"><?php echo $this->template->title; ?></h2>
 		</div>

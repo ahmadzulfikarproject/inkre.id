@@ -152,7 +152,7 @@
                         </div>
 
                       <?php endif; ?>
-                      <!-- <a target='_blank' href="mailto:<?= Globals::idContact()->email ?>?subject = Sewa Genset&body = Hai%20!%20Saya%20tertarik%20untuk%20sewa%20genset%20di%20sewagenset88.com" class="font-weight-bold"><?= Globals::idContact()->email ?></a> -->
+                      <!-- <a target='_blank' href="mailto:<?= Globals::idContact()->email ?>?subject = Sewa Genset&body = Hai%20!%20inkre.id" class="font-weight-bold"><?= Globals::idContact()->email ?></a> -->
                     </div>
                   </div>
                   <!-- <h3 class="mb-0 font-weight-light text-uppercase font-weight-bold"><?php echo setting('site_name') ?></h3> -->
@@ -243,7 +243,7 @@
     </div>
   </div>
   </div>
-  <a href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>&text=Hai%20!%20Saya%20tertarik%20untuk%20sewa%20genset%20di%20sewagenset88.com" class="float" target="_blank" data-aos="fade-up">
+  <a href="https://api.whatsapp.com/send?phone=62<?= Globals::idContact()->wa ?>&text=Hai%20!%20inkre.id" class="float" target="_blank" data-aos="fade-up">
     <i class="fa fa-whatsapp my-float"></i>
   </a>
   <?php $this->template->includeview('../../templates/' . template() . '/views/home-enquiry');  ?>
